@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown("space"))
         {
-            var bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         }
     }
 }
