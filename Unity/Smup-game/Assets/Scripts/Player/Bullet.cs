@@ -6,12 +6,22 @@ public class Bullet : MonoBehaviour {
 
     private float speed;
     private Rigidbody RigidBullet;
+    private UIManager uiManager;
 
+    public bool heavy;
     // Use this for initialization
     void Start ()
     {
-        speed = 10;
+        if (!heavy)
+        {
+            speed = 10;
+        }
+        else
+        {
+            speed = 5;
+        }
         RigidBullet = GetComponent<Rigidbody>();
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 	
 	// Update is called once per frame
@@ -22,7 +32,19 @@ public class Bullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-
+        
+        if(other.tag == "Enemy")
+        {
+            uiManager.score += 10;
+            Destroy(other.gameObject);
+            if (!heavy)
+            {
+                Destroy(gameObject);
+            }              
+        }
+        if (other.tag == "WallDeath")
+        {
+            Destroy(gameObject);
+        }
     }
 }

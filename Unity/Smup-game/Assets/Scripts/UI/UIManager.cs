@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
 
     public Text scoreText;
 
+    public int score;
+
     // Use this for initialization
     void Start () {
 		
@@ -14,6 +16,6 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        scoreText.text = score.ToString();
 	}
 }

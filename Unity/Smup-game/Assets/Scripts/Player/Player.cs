@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private static bool playerExists;
 
     public float moveSpeed;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab , heavyBulletPrefab;
     public Transform firePoint;
 
     // Use this for initialization
@@ -56,6 +56,10 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown("space"))
         {
             Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(heavyBulletPrefab, firePoint.position, Quaternion.identity);
         }
     }
 }
