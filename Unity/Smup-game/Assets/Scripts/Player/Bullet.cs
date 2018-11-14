@@ -42,9 +42,10 @@ public class Bullet : MonoBehaviour {
                 Destroy(gameObject);
             }              
         }
-        if (other.tag == "WallDeath")
+        if (other.tag == "WallDeath" || other.tag == "Hazard")
         {
             Destroy(gameObject);
         }
+
     }
 }
