@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-    public Text scoreText;
+    public Text scoreTextP1, scoreTextP2;
 
-    public int score;
+    public int scoreP1, scoreP2;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +16,6 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = score.ToString();
+        scoreTextP1.text = scoreP1.ToString();
 	}
 }

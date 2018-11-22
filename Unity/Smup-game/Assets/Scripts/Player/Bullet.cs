@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour {
     private UIManager uiManager;
 
     public bool heavy;
+    public bool p1Owner;
     // Use this for initialization
     void Start ()
     {
@@ -27,7 +28,15 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        RigidBullet.velocity = transform.up * speed;
+        if(p1Owner)
+        {
+            RigidBullet.velocity = transform.up * speed;
+        }
+        else
+        {
+            RigidBullet.velocity = transform.up * -speed;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +44,15 @@ public class Bullet : MonoBehaviour {
         
         if(other.tag == "Enemy")
         {
-            uiManager.score += 10;
+            if(p1Owner)
+            {
+                uiManager.scoreP1 += 10;
+            }
+            else
+            {
+                uiManager.scoreP2 += 10;
+            }
+
             Destroy(other.gameObject);
             if (!heavy)
             {
