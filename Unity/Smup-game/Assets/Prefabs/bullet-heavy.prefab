@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavy: 1
+  p1Owner: 1
 --- !u!135 &135421244505500464
 SphereCollider:
   m_ObjectHideFlags: 1
