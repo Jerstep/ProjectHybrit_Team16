@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour {
     {
 		if(pattern1 == true)
         {
-            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY * 3, 0);
-           if(right == true)
+            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY, 0);
+            if(right == true)
             {
                 RigidEnemy.velocity = new Vector3(moveSpeedX, RigidEnemy.velocity.y, 0);
             }
@@ -42,8 +42,6 @@ public class Enemy : MonoBehaviour {
         {
             StartCoroutine(PatternThree());
         }
-        
-
     }
 
     IEnumerator PatternOne()
@@ -91,7 +89,7 @@ public class Enemy : MonoBehaviour {
         {
             right = right ? false : true;
         }
-        if (other.tag == "WallDeath" || other.tag == "Hazard")
+        if (other.tag == "WallDeath")
         {
             Destroy(gameObject);
         }
