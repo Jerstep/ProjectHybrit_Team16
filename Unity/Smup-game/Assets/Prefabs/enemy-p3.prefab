@@ -118,7 +118,7 @@ MonoBehaviour:
   pattern2: 0
   pattern3: 1
   right: 1
-  switchTime: 1
+  switchTime: 10
 --- !u!136 &136595956150338002
 CapsuleCollider:
   m_ObjectHideFlags: 1
