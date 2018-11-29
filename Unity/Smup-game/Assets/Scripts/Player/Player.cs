@@ -11,20 +11,14 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public GameObject bulletPrefab , heavyBulletPrefab;
     public Transform firePoint;
+    public int hp;
+    public bool imActive;
 
     // Use this for initialization
     void Start ()
     {
         RigidPlayer = GetComponent<Rigidbody>();
-        if (!playerExists)
-        {
-            playerExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     // Update is called once per frame
@@ -60,6 +54,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Instantiate(heavyBulletPrefab, firePoint.position, Quaternion.identity);
+        }
+
+        if(hp <= 0)
+        {
+            imActive = false;
+            gameObject.SetActive(false);
         }
     }
 }

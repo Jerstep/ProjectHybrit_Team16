@@ -8,6 +8,9 @@ TagManager:
   - Walls
   - WallDeath
   - Hazard
+  - P1
+  - P2
+  - Bullet
   layers:
   - Default
   - TransparentFX
