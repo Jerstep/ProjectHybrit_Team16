@@ -7,18 +7,20 @@ public class Player : MonoBehaviour
     //rigidbody
     private Rigidbody RigidPlayer;
     private static bool playerExists;
+    private UIManager uiMan;
 
     public float moveSpeed;
     public GameObject bulletPrefab , heavyBulletPrefab;
     public Transform firePoint;
     public int hp;
     public bool imActive;
+    public bool player1;
 
     // Use this for initialization
     void Start ()
     {
         RigidPlayer = GetComponent<Rigidbody>();
-        
+        uiMan = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -58,6 +60,14 @@ public class Player : MonoBehaviour
 
         if(hp <= 0)
         {
+            if(player1)
+            {
+                uiMan.scoreP1 -= 100;
+            }
+            else
+            {
+                uiMan.scoreP2 -= 100;
+            }
             imActive = false;
             gameObject.SetActive(false);
         }
