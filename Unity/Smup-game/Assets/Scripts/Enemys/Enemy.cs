@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour {
 
     public float moveSpeedX, moveSpeedY;
     public bool pattern1, pattern2, pattern3;
-    public bool right;
+    public bool right, targetP1;
     public int switchTime;
 
     // Use this for initialization
@@ -22,8 +22,16 @@ public class Enemy : MonoBehaviour {
     {
 		if(pattern1 == true)
         {
-            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY, 0);
-            if(right == true)
+            if(targetP1)
+            {
+                RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY * 3, 0);
+            }
+            else
+            {
+                RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, -moveSpeedY * 3, 0);
+            }
+
+            if (right == true)
             {
                 RigidEnemy.velocity = new Vector3(moveSpeedX, RigidEnemy.velocity.y, 0);
             }
@@ -31,7 +39,7 @@ public class Enemy : MonoBehaviour {
             {
                 RigidEnemy.velocity = new Vector3(-moveSpeedX, RigidEnemy.velocity.y, 0);
             }
-            
+
             StartCoroutine(PatternOne());
         }
         if (pattern2 == true)
@@ -42,6 +50,8 @@ public class Enemy : MonoBehaviour {
         {
             StartCoroutine(PatternThree());
         }
+        
+
     }
 
     IEnumerator PatternOne()
@@ -52,7 +62,14 @@ public class Enemy : MonoBehaviour {
 
     IEnumerator PatternTwo()
     {
-        RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY, 0);
+        if (targetP1)
+        {
+            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY, 0);
+        }
+        else
+        {
+            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, -moveSpeedY, 0);
+        }
         yield return new WaitForSeconds(switchTime);
         if(right)
         {
@@ -64,7 +81,14 @@ public class Enemy : MonoBehaviour {
         }
         
         yield return new WaitForSeconds(switchTime);
-        RigidEnemy.velocity = new Vector3(0, -moveSpeedY, 0);
+        if (targetP1)
+        {
+            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, -moveSpeedY, 0);
+        }
+        else
+        {
+            RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY, 0);
+        }
     }
 
     IEnumerator PatternThree()
@@ -89,7 +113,7 @@ public class Enemy : MonoBehaviour {
         {
             right = right ? false : true;
         }
-        if (other.tag == "WallDeath")
+        if (other.tag == "WallDeath" || other.tag == "Hazard")
         {
             Destroy(gameObject);
         }

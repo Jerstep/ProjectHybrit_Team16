@@ -118,6 +118,7 @@ MonoBehaviour:
   pattern2: 0
   pattern3: 1
   right: 1
+  targetP1: 1
   switchTime: 1
 --- !u!136 &136595956150338002
 CapsuleCollider:

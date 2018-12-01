@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour {
     private float speed;
     private Rigidbody RigidBullet;
     private UIManager uiManager;
+    private Player player1, player2;
 
     public bool heavy;
     public bool p1Owner;
@@ -41,8 +42,14 @@ public class Bullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if(other.tag == "Enemy")
+
+        if (other.tag == "P1" || other.tag == "P2")
+        {
+            other.GetComponent<Player>().hp -= 10;
+            Destroy(gameObject);
+        }
+
+            if (other.tag == "Enemy")
         {
             if(p1Owner)
             {
