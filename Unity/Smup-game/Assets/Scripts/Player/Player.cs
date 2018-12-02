@@ -51,11 +51,11 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown("space"))
         {
-            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Instantiate(heavyBulletPrefab, firePoint.position, Quaternion.identity);
+            Instantiate(heavyBulletPrefab, firePoint.position, firePoint.rotation);
         }
 
         if(hp <= 0)
