@@ -66,10 +66,9 @@ public class Bullet : MonoBehaviour {
                 Destroy(gameObject);
             }              
         }
-        if (other.tag == "WallDeath" || other.tag == "Hazard")
+        if (other.tag == "WallDeath")
         {
             Destroy(gameObject);
         }
-
     }
 }
