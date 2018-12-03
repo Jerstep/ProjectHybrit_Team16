@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Vuforia\Editor\Scripts\OpenSourceInitializer.cs" />
+    <None Include="Assets\Vuforia\Editor\Scripts\VuforiaEditorScripts.asmdef" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Programmas/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>

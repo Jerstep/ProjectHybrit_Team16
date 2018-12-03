@@ -33,9 +33,6 @@ public class TargetPlayer : MonoBehaviour
         dis1 = Vector3.Distance(playerOne.transform.position, transform.position);
         dis2 = Vector3.Distance(playerTwo.transform.position, transform.position);
 
-        Debug.Log("Distance to player 1: " + dis1);
-        Debug.Log("Distance to player 2: " + dis2);
-
         if(dis1 < dis2)
         {
             target = playerOne.transform.position;

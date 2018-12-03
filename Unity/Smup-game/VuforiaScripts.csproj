@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
+    <None Include="Assets\Vuforia\Scripts\VuforiaScripts.asmdef" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Programmas/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
