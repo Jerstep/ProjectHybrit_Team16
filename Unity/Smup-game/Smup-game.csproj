@@ -326,6 +326,7 @@
     <Compile Include="Assets\moveCircle.cs" />
     <Compile Include="Assets\Scripts\Enemys\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemys\Hazard.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Rotate.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
