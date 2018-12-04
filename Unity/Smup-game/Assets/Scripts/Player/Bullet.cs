@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "P1" || other.tag == "P2")
+        if (other.tag == "Player-1" || other.tag == "Player-2")
         {
             other.GetComponent<Player>().hp -= 10;
             Destroy(gameObject);

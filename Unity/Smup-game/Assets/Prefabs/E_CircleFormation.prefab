@@ -38,13 +38,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798794918180962}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -15.536721, y: 16.522163, z: -35.91035}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.5393125, y: 7.0702095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &23755016286580300
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +100,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &114413038548744142
 MonoBehaviour:
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5418ba4f5e2c5914c8ca3beaaa26ab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedX: 5
-  moveSpeedY: 5
+  moveSpeedX: 2
+  moveSpeedY: 1
   pattern1: 0
   pattern2: 1
   pattern3: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71538d44eeda4e48bb1a37e192bec85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markerPrefab: {fileID: 4656119129088818, guid: c7023f9a8b4909f468743481d5d20f33,
+  markerPrefab: {fileID: 4214167154755646, guid: 6e4a6a3c3057ac740944fc5dd705283e,
     type: 2}
   pointCount: 4
   radius: 2.57
