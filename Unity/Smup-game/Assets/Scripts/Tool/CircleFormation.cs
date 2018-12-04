@@ -18,9 +18,10 @@ public class CircleFormation : MonoBehaviour {
         InitMarkers();
         parentCollider = GetComponentInParent<CapsuleCollider>();
         parentCollider.radius = radius;
+        MakeFOrmation();
     }
 
-    public void Update()
+    public void MakeFOrmation()
     {
         if(pointCount != markers.Count)
         {
