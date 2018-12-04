@@ -10,12 +10,14 @@ public class CircleFormation : MonoBehaviour {
     public float radius;
 
     public List<Transform> markers;
-
+    private CapsuleCollider parentCollider;
 
     public void Start()
     {
         markers = new List<Transform>();
         InitMarkers();
+        parentCollider = GetComponentInParent<CapsuleCollider>();
+        parentCollider.radius = radius;
     }
 
     public void Update()
@@ -26,7 +28,7 @@ public class CircleFormation : MonoBehaviour {
         }
 
         ////// the core bit ///////
-        Quaternion quaternion = Quaternion.AngleAxis(360f / (float)(pointCount - 1), transform.up);
+        Quaternion quaternion = Quaternion.AngleAxis(360f / (float)(pointCount), transform.up);
         Vector3 vec3 = transform.forward * radius;
         for(int index = 0; index < pointCount; ++index)
         {
@@ -45,6 +47,7 @@ public class CircleFormation : MonoBehaviour {
             {
                 // doesn't matter, we're updating the positions later
                 markers.Add(Instantiate(markerPrefab, Vector3.zero, Quaternion.identity) as Transform);
+                markers[i].transform.parent = gameObject.transform;
             }
         }
         if(pointCount < markers.Count)
