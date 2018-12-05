@@ -17,14 +17,8 @@ public class TargetPlayer : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //playerOne = GameObject.FindGameObjectWithTag("Player-1").gameObject;
-        //playerTwo = GameObject.FindGameObjectWithTag("Player-2").gameObject;
         playerOne = GameObject.FindGameObjectWithTag("Player-1");
         playerTwo = GameObject.FindGameObjectWithTag("Player-2");
-
-
-        //dis1 = Vector3.Distance(playerOne.transform.position, transform.position);
-        //dis2 = Vector3.Distance(playerTwo.transform.position, transform.position);
 	}
 	
 	// Update is called once per frame
@@ -60,5 +54,3 @@ public class TargetPlayer : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newDir);
     }
 }
-
-

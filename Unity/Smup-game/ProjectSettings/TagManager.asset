@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - WallDeath
-  - Walls
-  - Bullet
-  - Hazard
-  - Enemy
-  - Player-1
-  - Player-2
+  tags: []
   layers:
   - Default
   - TransparentFX

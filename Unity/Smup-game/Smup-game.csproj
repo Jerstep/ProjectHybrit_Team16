@@ -330,7 +330,11 @@
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\ProjectileMove.cs" />
+    <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\ProjectileSpawn.cs" />
+    <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\RotateToMouse.cs" />
     <Compile Include="Assets\Scripts\Tool\CircleFormation.cs" />
+    <Compile Include="Assets\Scripts\Tool\EnemyBuilder.cs" />
     <Compile Include="Assets\Scripts\Tool\PathBase.cs" />
     <Compile Include="Assets\Scripts\Tool\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Tool\SimpleMove.cs" />
