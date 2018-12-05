@@ -503,5 +503,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedX: 0
   moveSpeedY: -1
-  pattern: 0
+  patternr: 0
   switchTime: 1

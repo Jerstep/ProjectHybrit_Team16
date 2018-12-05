@@ -47,7 +47,7 @@ public class CircleFormation : MonoBehaviour {
             for(int i = markers.Count; i < pointCount; i++)
             {
                 // doesn't matter, we're updating the positions later
-                markers.Add(Instantiate(markerPrefab, Vector3.zero, Quaternion.identity) as Transform);
+                markers.Add(Instantiate(markerPrefab, Vector3.zero, transform.rotation) as Transform);
                 markers[i].transform.parent = gameObject.transform;
             }
         }
