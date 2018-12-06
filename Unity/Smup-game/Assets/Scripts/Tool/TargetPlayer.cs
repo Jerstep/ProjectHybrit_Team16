@@ -51,6 +51,6 @@ public class TargetPlayer : MonoBehaviour
         Debug.DrawRay(transform.position, newDir, Color.red);
 
         // Move our position a step closer to the target.
-        transform.rotation = Quaternion.LookRotation(newDir);
+        transform.rotation = Quaternion.LookRotation(targetDir, -Vector3.forward);
     }
 }

@@ -51,14 +51,6 @@ public class CircleFormation : MonoBehaviour {
                 markers[i].transform.parent = gameObject.transform;
             }
         }
-        if(pointCount < markers.Count)
-        {
-            while(pointCount < markers.Count)
-            {
-                Destroy(markers[0].gameObject);
-                markers.RemoveAt(0); // dont miss this line out!!
-            }
-        }
     }
 }
 
