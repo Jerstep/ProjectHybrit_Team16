@@ -14,15 +14,15 @@ public class TargetPlayer : MonoBehaviour
     private float dis2;
     [SerializeField] private float speed;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         playerOne = GameObject.FindGameObjectWithTag("Player-1");
         playerTwo = GameObject.FindGameObjectWithTag("Player-2");
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         dis1 = Vector3.Distance(playerOne.transform.position, transform.position);
         dis2 = Vector3.Distance(playerTwo.transform.position, transform.position);
@@ -38,7 +38,7 @@ public class TargetPlayer : MonoBehaviour
         }
 
         RotateToTarget();
-	}
+    }
 
     void RotateToTarget()
     {
@@ -51,6 +51,6 @@ public class TargetPlayer : MonoBehaviour
         Debug.DrawRay(transform.position, newDir, Color.red);
 
         // Move our position a step closer to the target.
-        transform.rotation = Quaternion.LookRotation(newDir);
+        transform.rotation = Quaternion.LookRotation(targetDir, -Vector3.forward);
     }
 }

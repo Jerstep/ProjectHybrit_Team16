@@ -12,17 +12,18 @@ public class Enemy : MonoBehaviour {
     public int switchTime;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-		RigidEnemy = GetComponent<Rigidbody>();
+        RigidEnemy = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		if(pattern1 == true)
+        transform.Rotate(Vector3.right * Time.deltaTime);
+        if (pattern1 == true)
         {
-            if(targetP1)
+            if (targetP1)
             {
                 RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, moveSpeedY * 3, 0);
             }
@@ -50,7 +51,7 @@ public class Enemy : MonoBehaviour {
         {
             StartCoroutine(PatternThree());
         }
-        
+
 
     }
 
@@ -71,7 +72,7 @@ public class Enemy : MonoBehaviour {
             RigidEnemy.velocity = new Vector3(RigidEnemy.velocity.x, -moveSpeedY, 0);
         }
         yield return new WaitForSeconds(switchTime);
-        if(right)
+        if (right)
         {
             RigidEnemy.velocity = new Vector3(moveSpeedX, 0, 0);
         }
@@ -79,7 +80,7 @@ public class Enemy : MonoBehaviour {
         {
             RigidEnemy.velocity = new Vector3(-moveSpeedX, 0, 0);
         }
-        
+
         yield return new WaitForSeconds(switchTime);
         if (targetP1)
         {
