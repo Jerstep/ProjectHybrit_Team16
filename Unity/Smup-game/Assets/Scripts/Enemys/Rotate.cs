@@ -10,17 +10,18 @@ public class Rotate : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        middleObject = transform.parent.gameObject;
+        //middleObject = transform.parent.gameObject;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        OrbitAround();
-	}
+
+        transform.Rotate(Vector3.up * speed * Time.deltaTime);
+    }
 
     void OrbitAround()
     {
-        transform.RotateAround(middleObject.transform.position, Vector3.forward, speed * Time.deltaTime);
+        transform.RotateAround(middleObject.transform.position, Vector3.forward, speed );
     }
 }

@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour {
     private Player player1, player2;
 
     public bool heavy;
-    public bool p1Owner;
+    public bool p1Owner, enemyOwner;
     // Use this for initialization
     void Start ()
     {
@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(p1Owner)
+        if(p1Owner || enemyOwner)
         {
             RigidBullet.velocity = transform.up * speed;
         }
@@ -49,8 +49,8 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
 
-            if (other.tag == "Enemy")
-        {
+         if (other.tag == "Enemy" && enemyOwner == false)
+         {
             if(p1Owner)
             {
                 uiManager.scoreP1 += 10;

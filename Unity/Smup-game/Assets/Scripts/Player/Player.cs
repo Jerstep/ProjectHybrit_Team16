@@ -53,11 +53,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Instantiate(heavyBulletPrefab, firePoint.position, firePoint.rotation);
-        }
-
+        
         if(hp <= 0)
         {
             if(player1)
