@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour {
 
     public GameObject player1, player2;
 
-    public GameObject enemy, enemy2, enemy3,enemyP2,enemy2P2,enemy3P2, boulder;
+    public GameObject enemy, enemy2, enemy3, boulder;
     public Transform rotation;
     public Vector3 spawnValues;
     public int enemyCount, boulderCount;
@@ -44,10 +44,8 @@ public class GameController : MonoBehaviour {
             for (int i = 0; i < enemyCount; i++)
             {
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Vector3 spawnPosition2 = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion SpawnRotation = enemy.transform.rotation;
                 Instantiate(enemy, spawnPosition, SpawnRotation);
-                Instantiate(enemyP2, spawnPosition2, SpawnRotation);
                 yield return new WaitForSeconds(spawnWaitTime);
             }
             yield return new WaitForSeconds(waveWaitTime);
@@ -59,10 +57,8 @@ public class GameController : MonoBehaviour {
             for (int i = 0; i < enemyCount; i++)
             {
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Vector3 spawnPosition2 = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z); ;
                 Quaternion SpawnRotation = enemy.transform.rotation;
                 Instantiate(enemy2, spawnPosition, SpawnRotation);
-                Instantiate(enemy2P2, spawnPosition2, SpawnRotation);
                 yield return new WaitForSeconds(spawnWaitTime);
             }
             yield return new WaitForSeconds(waveWaitTime);
@@ -74,10 +70,8 @@ public class GameController : MonoBehaviour {
             for (int i = 0; i < enemyCount; i++)
             {
                 Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Vector3 spawnPosition2 = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion SpawnRotation = enemy.transform.rotation;
                 Instantiate(enemy3, spawnPosition, SpawnRotation);
-                Instantiate(enemy3P2, spawnPosition2, SpawnRotation);
                 yield return new WaitForSeconds(spawnWaitTime);
             }
             yield return new WaitForSeconds(waveWaitTime);
