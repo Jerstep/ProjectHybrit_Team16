@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 33045204155179156}
   - component: {fileID: 114413038548744142}
   - component: {fileID: 54943219408725132}
-  - component: {fileID: 136039934296640328}
+  - component: {fileID: 114137156916741680}
   m_Layer: 0
   m_Name: E_CircleFormation
   m_TagString: Untagged
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798794918180962}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5393125, y: 7.0702095, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &114137156916741680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798794918180962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fe77d49a05af649b80f25e0fc59faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
 --- !u!114 &114413038548744142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,19 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   markerPrefab: {fileID: 4214167154755646, guid: 6e4a6a3c3057ac740944fc5dd705283e,
     type: 2}
-  pointCount: 4
-  radius: 2.57
+  pointCount: 20
+  radius: 5
   markers: []
---- !u!136 &136039934296640328
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1798794918180962}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 1.0000002
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

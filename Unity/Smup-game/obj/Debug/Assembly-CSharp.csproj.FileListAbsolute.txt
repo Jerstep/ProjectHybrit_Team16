@@ -168,3 +168,9 @@ D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\obj\Debug\Assembly-CSharp.cspr
 D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\obj\Debug\Assembly-CSharp.dll
 D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\obj\Debug\Assembly-CSharp.pdb
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\Vuforia.UnityExtensions.Editor.dll
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\UnityEditor.UI.dll
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\VuforiaScripts.pdb
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\VuforiaEditorScripts.pdb
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\Vuforia.UnityExtensions.Editor.xml
+D:\Projecten\ProjectHybrit_Team16\Unity\Smup-game\Temp\bin\Debug\UnityEditor.UI.xml
