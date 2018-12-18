@@ -6,25 +6,37 @@ public class GameController : MonoBehaviour {
 
     public GameObject player1, player2;
 
-    public GameObject enemy, enemy2, enemy3, boulder;
-    public Transform rotation;
-    public Vector3 spawnValues;
-    public int enemyCount, boulderCount;
+    [System.Serializable]
+    public class Wave
+    {
+        public GameObject[] enemyFormations;
+        private string[] names;
+        public Vector3 spawnValues;
+        [Range(1, 10)]
+        public int formationEnemyCount;
+
+        public enum directions {left,right,up,down}
+        public directions[] Directions;
+    }
+    public Wave[] waves;
+    public int waveNumber;
+
     public float startWaitTime,spawnWaitTime, waveWaitTime;
-    public int patternCount;
+    
 
 
 	// Use this for initialization
 	void Start ()
     {
-        
-        StartCoroutine(SpawnWaves());
-        StartCoroutine(SpawnWavesBulders());
+        player1 = GameObject.FindGameObjectWithTag("Player-1");
+        player2 = GameObject.FindGameObjectWithTag("Player-2");
+        StartCoroutine(SpawnWaves(waves[waveNumber]));
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+
 		if(player1.GetComponent<Player>().imActive == false)
         {
             StartCoroutine(TurnOnP1());
@@ -36,68 +48,36 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    IEnumerator SpawnWaves()
+    IEnumerator SpawnWaves(Wave _wave)
     {
         yield return new WaitForSeconds(startWaitTime);
-        while(patternCount == 1)
-        {
-            for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < _wave.enemyFormations.Length; i++)
             {
-                Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Quaternion SpawnRotation = enemy.transform.rotation;
-                Instantiate(enemy, spawnPosition, SpawnRotation);
+                Vector3 spawnPosition = new Vector3(_wave.spawnValues.x, Random.Range(-_wave.spawnValues.y, _wave.spawnValues.y), _wave.spawnValues.z);
+                Quaternion SpawnRotation = _wave.enemyFormations[i].transform.rotation;
+                Instantiate(_wave.enemyFormations[i], spawnPosition, SpawnRotation);
                 yield return new WaitForSeconds(spawnWaitTime);
             }
             yield return new WaitForSeconds(waveWaitTime);
-            patternCount++;
-        }
-
-        while (patternCount == 2)
-        {
-            for (int i = 0; i < enemyCount; i++)
-            {
-                Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Quaternion SpawnRotation = enemy.transform.rotation;
-                Instantiate(enemy2, spawnPosition, SpawnRotation);
-                yield return new WaitForSeconds(spawnWaitTime);
-            }
-            yield return new WaitForSeconds(waveWaitTime);
-            patternCount++;
-        }
-
-        while (patternCount == 3)
-        {
-            for (int i = 0; i < enemyCount; i++)
-            {
-                Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
-                Quaternion SpawnRotation = enemy.transform.rotation;
-                Instantiate(enemy3, spawnPosition, SpawnRotation);
-                yield return new WaitForSeconds(spawnWaitTime);
-            }
-            yield return new WaitForSeconds(waveWaitTime);
-            patternCount = 1;
-            StartCoroutine(SpawnWaves());
-        }
+            waveNumber++;
+            WaveCompleted();
     }
 
-    IEnumerator SpawnWavesBulders()
+    void WaveCompleted()
     {
-        yield return new WaitForSeconds(startWaitTime + 1);
-        while (true)
+        if(waveNumber < waves.Length)
         {
-            for (int i = 0; i < boulderCount; i++)
-            {
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion SpawnRotation = Quaternion.identity;
-                Instantiate(boulder, spawnPosition, SpawnRotation);
-                yield return new WaitForSeconds(spawnWaitTime);
-            }
-            yield return new WaitForSeconds(waveWaitTime);
+            Debug.Log("we get to wavecomp");
+            StartCoroutine(SpawnWaves(waves[waveNumber]));
+        }
+        else
+        {
+            Debug.Log("we done here");
         }
     }
 
 
-    IEnumerator TurnOnP1()
+        IEnumerator TurnOnP1()
     {
         yield return new WaitForSeconds(3);
         player1.SetActive(true);

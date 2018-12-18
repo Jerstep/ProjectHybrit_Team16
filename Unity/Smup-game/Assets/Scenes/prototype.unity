@@ -1290,20 +1290,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a9abad19761304090557cc15d8e06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 69812094}
-  player2: {fileID: 2057839636}
-  enemy: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-  enemy2: {fileID: 1322656322422558, guid: f5a180dcc978f174ba3afc31c7b8c8ba, type: 2}
-  enemy3: {fileID: 1262184182721934, guid: efe2067f7307a504f890095fbf2435af, type: 2}
-  boulder: {fileID: 1418329444007634, guid: 5934bed8cb222c3488074f7ed23fca36, type: 2}
-  rotation: {fileID: 1902761613}
-  spawnValues: {x: 0, y: 20, z: 0}
-  enemyCount: 3
-  boulderCount: 0
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  waves:
+  - enemyFormations:
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    spawnValues: {x: 0, y: 20, z: 0}
+    formationEnemyCount: 3
+    Directions: 00000000
+  - enemyFormations:
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
+    spawnValues: {x: 0, y: 20, z: 0}
+    formationEnemyCount: 3
+    Directions: 
+  waveNumber: 0
   startWaitTime: 1
   spawnWaitTime: 0.5
   waveWaitTime: 2
-  patternCount: 1
 --- !u!4 &1951407559
 Transform:
   m_ObjectHideFlags: 0
