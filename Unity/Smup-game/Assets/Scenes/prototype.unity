@@ -1292,24 +1292,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  waves:
-  - enemyFormations:
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    spawnValues: {x: 0, y: 20, z: 0}
-    formationEnemyCount: 3
-    Directions: 00000000
-  - enemyFormations:
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    - {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640, type: 2}
-    spawnValues: {x: 0, y: 20, z: 0}
-    formationEnemyCount: 3
-    Directions: 
-  waveNumber: 0
+  Waves:
+  - Type: 0
+    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
+      type: 2}
+    formationEnemyCount: 1
+  - Type: 0
+    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
+      type: 2}
+    formationEnemyCount: 4
+  - Type: 0
+    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
+      type: 2}
+    formationEnemyCount: 5
+  spawnValues: {x: 0, y: 20, z: 0}
   startWaitTime: 1
-  spawnWaitTime: 0.5
+  spawnWaitTime: 1
   waveWaitTime: 2
 --- !u!4 &1951407559
 Transform:

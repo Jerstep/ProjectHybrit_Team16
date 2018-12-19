@@ -6,20 +6,10 @@ public class GameController : MonoBehaviour {
 
     public GameObject player1, player2;
 
-    [System.Serializable]
-    public class Wave
-    {
-        public GameObject[] enemyFormations;
-        private string[] names;
-        public Vector3 spawnValues;
-        [Range(1, 10)]
-        public int formationEnemyCount;
+    public List<MobWave> Waves = new List<MobWave>();
 
-        public enum directions {left,right,up,down}
-        public directions[] Directions;
-    }
-    public Wave[] waves;
-    public int waveNumber;
+    public Vector3 spawnValues;
+    int waveNumber = 1;
 
     public float startWaitTime,spawnWaitTime, waveWaitTime;
     
@@ -30,11 +20,12 @@ public class GameController : MonoBehaviour {
     {
         player1 = GameObject.FindGameObjectWithTag("Player-1");
         player2 = GameObject.FindGameObjectWithTag("Player-2");
-        StartCoroutine(SpawnWaves(waves[waveNumber]));
+        StartCoroutine(SpawnWaves());
+        
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
 
 		if(player1.GetComponent<Player>().imActive == false)
@@ -48,9 +39,18 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    IEnumerator SpawnWaves(Wave _wave)
+    IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWaitTime);
+        foreach (MobWave wave in Waves)
+        {
+            Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+            Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
+            Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
+            yield return new WaitForSeconds(waveWaitTime);
+        }
+
+    /*    yield return new WaitForSeconds(startWaitTime);
         for (int i = 0; i < _wave.enemyFormations.Length; i++)
             {
                 Vector3 spawnPosition = new Vector3(_wave.spawnValues.x, Random.Range(-_wave.spawnValues.y, _wave.spawnValues.y), _wave.spawnValues.z);
@@ -73,11 +73,11 @@ public class GameController : MonoBehaviour {
         else
         {
             Debug.Log("we done here");
-        }
+        }*/
     }
 
 
-        IEnumerator TurnOnP1()
+    IEnumerator TurnOnP1()
     {
         yield return new WaitForSeconds(3);
         player1.SetActive(true);
