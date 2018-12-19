@@ -50,30 +50,6 @@ public class GameController : MonoBehaviour {
             yield return new WaitForSeconds(waveWaitTime);
         }
 
-    /*    yield return new WaitForSeconds(startWaitTime);
-        for (int i = 0; i < _wave.enemyFormations.Length; i++)
-            {
-                Vector3 spawnPosition = new Vector3(_wave.spawnValues.x, Random.Range(-_wave.spawnValues.y, _wave.spawnValues.y), _wave.spawnValues.z);
-                Quaternion SpawnRotation = _wave.enemyFormations[i].transform.rotation;
-                Instantiate(_wave.enemyFormations[i], spawnPosition, SpawnRotation);
-                yield return new WaitForSeconds(spawnWaitTime);
-            }
-            yield return new WaitForSeconds(waveWaitTime);
-            waveNumber++;
-            WaveCompleted();
-    }
-
-    void WaveCompleted()
-    {
-        if(waveNumber < waves.Length)
-        {
-            Debug.Log("we get to wavecomp");
-            StartCoroutine(SpawnWaves(waves[waveNumber]));
-        }
-        else
-        {
-            Debug.Log("we done here");
-        }*/
     }
 
 

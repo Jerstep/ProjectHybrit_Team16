@@ -1300,14 +1300,10 @@ MonoBehaviour:
   - Type: 0
     enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
       type: 2}
-    formationEnemyCount: 4
-  - Type: 0
-    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
-      type: 2}
-    formationEnemyCount: 5
+    formationEnemyCount: 1
   spawnValues: {x: 0, y: 20, z: 0}
-  startWaitTime: 1
-  spawnWaitTime: 1
+  startWaitTime: 4
+  spawnWaitTime: 4
   waveWaitTime: 2
 --- !u!4 &1951407559
 Transform:
