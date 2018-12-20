@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 4000523255505266}
   - component: {fileID: 136406909150250580}
   - component: {fileID: 54590934154727832}
-  - component: {fileID: 114528026251192122}
+  - component: {fileID: 114603774088070856}
   m_Layer: 0
   m_Name: 4shot
   m_TagString: Enemy
@@ -2643,7 +2643,7 @@ MonoBehaviour:
   playerOne: {fileID: 0}
   playerTwo: {fileID: 0}
   speed: 10
---- !u!114 &114528026251192122
+--- !u!114 &114603774088070856
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fe77d49a05af649b80f25e0fc59faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 3
 --- !u!114 &114678792361608584
 MonoBehaviour:
   m_ObjectHideFlags: 1

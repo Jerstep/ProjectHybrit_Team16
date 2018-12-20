@@ -40,7 +40,7 @@ public class GameControllerEditor : Editor {
                 ReorderableList.defaultBehaviours.DoRemoveButton(l);
             }
         };
-        //aad wave
+        //add wave
         list.onAddCallback = (ReorderableList l) => {
             var index = l.serializedProperty.arraySize;
             l.serializedProperty.arraySize++;
