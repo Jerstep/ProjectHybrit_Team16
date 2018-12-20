@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class TargetPlayer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TargetPlayer : MonoBehaviour
 
     private Vector3 target;
 
+    private GameController GameCon;
     private float dis1;
     private float dis2;
     [SerializeField] private float speed;
@@ -17,8 +19,9 @@ public class TargetPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        playerOne = GameObject.FindGameObjectWithTag("Player-1");
-        playerTwo = GameObject.FindGameObjectWithTag("Player-2");
+        GameCon = GameObject.Find("GameController").GetComponent<GameController>();
+        playerOne = GameCon.player1;
+        playerTwo = GameCon.player2;
     }
 
     // Update is called once per frame
