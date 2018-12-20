@@ -10,14 +10,11 @@ public class CircleFormation : MonoBehaviour {
     public float radius;
 
     public List<Transform> markers;
-    private CapsuleCollider parentCollider;
 
     public void Start()
     {
         markers = new List<Transform>();
         InitMarkers();
-        parentCollider = GetComponentInParent<CapsuleCollider>();
-        parentCollider.radius = radius;
         MakeFOrmation();
     }
 
