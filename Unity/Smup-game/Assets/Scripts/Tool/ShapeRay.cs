@@ -34,8 +34,9 @@ public class ShapeRay : MonoBehaviour {
     {
         GameObject shapeObject = Instantiate(shape, position, shape.transform.rotation);
         shapeObject.transform.localScale *= radius;
-        Destroy(shapeObject, 0.1f);
+        //Destroy(shapeObject, 0.1f);
         SetPositions();
+        DestroyImmediate(shapeObject);
              
     }
 
@@ -52,7 +53,7 @@ public class ShapeRay : MonoBehaviour {
         {
             if(Physics.Raycast(transform.position, vec3, out hit, Mathf.Infinity))
             {
-                if(hit.collider.tag == "shape")
+                if(hit.collider.CompareTag("shape"))
                 {
                     temp = hit.point;
 
@@ -75,7 +76,7 @@ public class ShapeRay : MonoBehaviour {
 
     void InstantiateEnemys()
     {
-        for (int i = 0; i < hitPoints.Capacity; i++)
+        for (int i = 0; i < hitPoints.Count; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, hitPoints[i], enemyPrefab.transform.rotation) as GameObject;
             enemy.transform.parent = this.transform;
