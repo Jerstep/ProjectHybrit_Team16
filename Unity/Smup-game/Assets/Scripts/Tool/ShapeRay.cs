@@ -19,7 +19,7 @@ public class ShapeRay : MonoBehaviour {
     private Vector3 temp = new Vector3();
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         position = this.transform.position;
         CreateShape();
@@ -34,10 +34,8 @@ public class ShapeRay : MonoBehaviour {
     {
         GameObject shapeObject = Instantiate(shape, position, shape.transform.rotation);
         shapeObject.transform.localScale *= radius;
-        //Destroy(shapeObject, 0.1f);
         SetPositions();
-        DestroyImmediate(shapeObject);
-             
+        DestroyImmediate(shapeObject);             
     }
 
 

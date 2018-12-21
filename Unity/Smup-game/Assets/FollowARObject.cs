@@ -9,6 +9,9 @@ public class FollowARObject : MonoBehaviour {
     public float xOffset;
     public float yOffset;
 
+    public float xPosOffset;
+    public float yPosOffset;
+
     [Header("Set to exactly follow targets (increse values)")]
     public float xPos;
     public float yPos;
@@ -24,8 +27,8 @@ public class FollowARObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        xOffset = Remap(ARTarget.position.x, -41f, 41f, -xPos, xPos);
-        yOffset = Remap(ARTarget.position.y, -23f, 23f, -yPos, yPos);
+        xOffset = Remap(ARTarget.position.x + xPosOffset, -41f, 41f, -xPos, xPos);
+        yOffset = Remap(ARTarget.position.y + yPosOffset, -23f, 23f, -yPos, yPos);
 
         if(ARTarget != null)
         {

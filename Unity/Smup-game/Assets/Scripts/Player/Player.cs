@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public bool imActive;
     public bool player1;
 
+    public bool fire;
+
     // Use this for initialization
     void Start ()
     {
