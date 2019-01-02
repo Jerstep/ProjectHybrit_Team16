@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class VirtualButtonPressed : MonoBehaviour, IVirtualButtonEventHandler {
+public class VirtualButtonPressedP2 : MonoBehaviour, IVirtualButtonEventHandler {
 
-    public GameObject targetObjectPlayer1;
+    public GameObject targetObjectPlayer2;
 
-    public GameObject playerObject1;
+    public GameObject playerObject2;
     public Player playerController;
 
 	// Use this for initialization
 	void Start () {
-        playerObject1 = GameObject.FindWithTag("Player-1");
-        playerController = playerObject1.GetComponent<Player>();
+        playerObject2 = GameObject.FindWithTag("Player-2");
+        playerController = playerObject2.GetComponent<Player>();
 
-        targetObjectPlayer1.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
+        targetObjectPlayer2.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
     }
 	
 	// Update is called once per frame

@@ -45,7 +45,6 @@ public class ShapeRay : MonoBehaviour {
         Vector3 vec3 = transform.forward * radius;
 
         RaycastHit hit;
-        Debug.Log("setPos");
 
         for(int i = 0; i < enemyAmount; i++)
         {
@@ -60,7 +59,6 @@ public class ShapeRay : MonoBehaviour {
                     //Vector3 hitPos = hit.point;
 
                     vec3 = quaternion * vec3;
-                    print("hit");
                 }
             }
             else

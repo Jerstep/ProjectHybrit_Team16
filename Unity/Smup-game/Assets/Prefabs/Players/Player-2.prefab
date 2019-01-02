@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 54146318889491920}
   - component: {fileID: 65175824091474430}
   - component: {fileID: 114412060908519960}
+  - component: {fileID: 114682388111447750}
   m_Layer: 0
   m_Name: Player-2
   m_TagString: Player-2
@@ -320,6 +321,21 @@ GameObject:
   m_Name: pasted__pCube2 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1685726434663720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4544241981379698}
+  m_Layer: 0
+  m_Name: firePoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -469,7 +485,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1510040360101616}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.6, y: -11.5, z: -0}
+  m_LocalPosition: {x: 22.16, y: -11.5, z: -0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4408473182420220}
@@ -487,6 +503,7 @@ Transform:
   - {fileID: 4404630413781388}
   - {fileID: 4555007025898466}
   - {fileID: 4598425224230582}
+  - {fileID: 4544241981379698}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 179.99998}
@@ -692,6 +709,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4024763482255450}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4544241981379698
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685726434663720}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 2.89, y: -0.9, z: -0.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4008293732505678}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4553114939037940
 Transform:
@@ -1484,7 +1514,27 @@ MonoBehaviour:
     type: 2}
   heavyBulletPrefab: {fileID: 1429790426451634, guid: 3203a5e6ed22f8649bd561b9948328b9,
     type: 2}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 4544241981379698}
   hp: 100
   imActive: 0
   player1: 0
+  fire: 0
+  setCooldown: 0.2
+--- !u!114 &114682388111447750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510040360101616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95c25821b2ea6a46a3d5d2154707bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ARTarget: {fileID: 0}
+  xOffset: 32.367867
+  yOffset: 0
+  xPosOffset: 7.86
+  yPosOffset: -0.4
+  xPos: 103.08
+  yPos: 56.1

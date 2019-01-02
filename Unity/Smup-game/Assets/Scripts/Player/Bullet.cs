@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour {
     {
         if (!heavy)
         {
-            speed = 10;
+            speed = 20;
         }
         else
         {

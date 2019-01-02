@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowARObject : MonoBehaviour {
+public class FollowARObjectP2 : MonoBehaviour {
 
     public Transform ARTarget;
 
@@ -27,13 +27,14 @@ public class FollowARObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        xOffset = Remap(ARTarget.position.x + xPosOffset, 0f, 41f, 0, xPos);
+        xOffset = Remap(ARTarget.position.x + xPosOffset, 0f, -41f, 0, -xPos);
         yOffset = Remap(ARTarget.position.y + yPosOffset, -23f, 23f, -yPos, yPos);
 
         if(ARTarget != null)
         {
             transform.position = new Vector3(xOffset, yOffset, this.transform.position.z);
-            transform.rotation = ARTarget.transform.rotation;  /*ARTarget.transform.rotation;*/
+            //transform.eulerAngles = new Vector3(-ARTarget.rotation.x, -ARTarget.rotation.y, ARTarget.rotation.z);
+            transform.rotation = transform.rotation;
         }
         else
         {
