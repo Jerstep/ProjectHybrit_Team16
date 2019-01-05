@@ -32,6 +32,7 @@ public class ShapeRay : MonoBehaviour {
 
     void CreateShape()
     {
+        print("create my guy");
         GameObject shapeObject = Instantiate(shape, position, shape.transform.rotation);
         shapeObject.transform.localScale *= radius;
         SetPositions();

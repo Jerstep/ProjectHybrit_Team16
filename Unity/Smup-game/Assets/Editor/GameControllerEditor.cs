@@ -9,8 +9,7 @@ using System.IO;
 public class GameControllerEditor : Editor {
     private ReorderableList list;
 
-    private void OnEnable()
-    {
+    private void OnEnable(){
         //draws the thing
         list = new ReorderableList(serializedObject, serializedObject.FindProperty("Waves"), true, true, true, true);
         list.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) => {
@@ -53,19 +52,48 @@ public class GameControllerEditor : Editor {
 
         list.onAddDropdownCallback = (Rect buttonRect, ReorderableList l) => {
             var menu = new GenericMenu();
-            var guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations" });
-            foreach (var guid in guids)
-            {
+            //create the submenus for dropdown
+           
+            //Circle
+            var guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Circle" });
+            foreach (var guid in guids){
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Formations/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Circle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+            }
+           
+            //Hexagon
+            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Hexagon" });
+            foreach (var guid in guids){
+                var path = AssetDatabase.GUIDToAssetPath(guid);
+                menu.AddItem(new GUIContent("Hexagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
             }
             
+            //Pentagon
+            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Pentagon" });
+            foreach (var guid in guids) {
+                var path = AssetDatabase.GUIDToAssetPath(guid);
+                menu.AddItem(new GUIContent("Pentagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+            }
+            
+            // Square
+            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Square" });
+            foreach (var guid in guids){
+                var path = AssetDatabase.GUIDToAssetPath(guid);
+                menu.AddItem(new GUIContent("Square/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+            }
+           
+            //Triangle
+            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Triangle" });
+            foreach (var guid in guids){
+                var path = AssetDatabase.GUIDToAssetPath(guid);
+                menu.AddItem(new GUIContent("Triangle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+            }
+
             menu.ShowAsContext();
         };
     }
 
-    public override void OnInspectorGUI()
-    {
+    public override void OnInspectorGUI(){
         //base.OnInspectorGUI();
 
         serializedObject.Update();
@@ -83,8 +111,7 @@ public class GameControllerEditor : Editor {
 
     }
 
-    private void clickHandler(object target)
-    {
+    private void clickHandler(object target){
         var data = (WaveCreationParams)target;
         var index = list.serializedProperty.arraySize;
         list.serializedProperty.arraySize++;
@@ -96,8 +123,7 @@ public class GameControllerEditor : Editor {
         serializedObject.ApplyModifiedProperties();
     }
 
-    private struct WaveCreationParams
-    {
+    private struct WaveCreationParams{
         public MobWave.WaveType Type;
         public string Path;
     }

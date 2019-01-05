@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     [Header("Time in sec")]
     public float setCooldown;
 
+    public bool fire;
+
     // Use this for initialization
     void Start()
     {

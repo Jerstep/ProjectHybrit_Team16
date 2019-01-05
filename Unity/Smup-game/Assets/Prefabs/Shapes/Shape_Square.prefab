@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33473947264551256}
   - component: {fileID: 23414709231594222}
   - component: {fileID: 64454286321722656}
-  - component: {fileID: 114609027699425378}
   m_Layer: 0
   m_Name: Shape_Square
   m_TagString: shape
@@ -99,15 +98,3 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: bff133819cb360a458e181dfd504e68f, type: 3}
---- !u!114 &114609027699425378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1107809385660292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fe77d49a05af649b80f25e0fc59faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
