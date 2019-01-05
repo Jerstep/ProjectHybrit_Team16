@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour {
             Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
             wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
             Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
-            yield return new WaitForSeconds(waveWaitTime);
+            yield return new WaitForSeconds(spawnWaitTime);
         }
 
     }

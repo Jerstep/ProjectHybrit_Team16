@@ -165,6 +165,7 @@ MonoBehaviour:
   hp: 100
   imActive: 1
   player1: 1
+  fire: 0
 --- !u!4 &69812098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1c44a03bc7a007c459dbacdd161efbd2,
@@ -1294,17 +1295,13 @@ MonoBehaviour:
   player2: {fileID: 0}
   Waves:
   - Type: 0
-    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
+    enemyFormation: {fileID: 1876801480845260, guid: 0a0f93c2720557b4abff4ed0fa1812c4,
       type: 2}
     formationEnemyCount: 1
   - Type: 0
-    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
+    enemyFormation: {fileID: 1896061869978110, guid: b1a56be3c5b594942958f77baf326640,
       type: 2}
-    formationEnemyCount: 4
-  - Type: 0
-    enemyFormation: {fileID: 1798794918180962, guid: b1a56be3c5b594942958f77baf326640,
-      type: 2}
-    formationEnemyCount: 3
+    formationEnemyCount: 1
   spawnValues: {x: 0, y: 20, z: 0}
   startWaitTime: 4
   spawnWaitTime: 4
@@ -1562,6 +1559,7 @@ MonoBehaviour:
   hp: 100
   imActive: 1
   player1: 0
+  fire: 0
 --- !u!4 &2057839640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1c44a03bc7a007c459dbacdd161efbd2,

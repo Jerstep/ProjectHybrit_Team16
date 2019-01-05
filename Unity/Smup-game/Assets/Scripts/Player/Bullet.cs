@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(p1Owner || enemyOwner)
+        if (p1Owner || enemyOwner)
         {
             RigidBullet.velocity = transform.up * speed;
         }
@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour {
 
          if (other.tag == "Enemy" && enemyOwner == false)
          {
-            if(p1Owner)
+            if (p1Owner)
             {
                 uiManager.scoreP1 += 10;
             }
@@ -66,7 +66,8 @@ public class Bullet : MonoBehaviour {
                 Destroy(gameObject);
             }              
         }
-        if (other.tag == "Walls" || other.tag == "WallDeath" || other.tag == "Bullet")
+
+        if (other.tag == "Walls" || other.tag == "WallDeath" /*|| other.tag == "Bullet"*/)
         {
             Destroy(gameObject);
         }
