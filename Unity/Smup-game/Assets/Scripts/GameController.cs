@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 
     public List<MobWave> Waves = new List<MobWave>();
 
+    
     public Vector3 spawnValues;
     int waveNumber = 1;
 
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWaitTime);
         foreach (MobWave wave in Waves)
         {
+            spawnValues.y = wave.spawnValueYPos;
             Vector3 spawnPosition = new Vector3(spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
             Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
             wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;

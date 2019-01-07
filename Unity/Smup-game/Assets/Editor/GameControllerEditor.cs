@@ -18,6 +18,8 @@ public class GameControllerEditor : Editor {
             EditorGUI.PropertyField(new Rect(rect.x, rect.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("Type"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + 60, rect.y, rect.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("enemyFormation"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("formationEnemyCount"), GUIContent.none);
+            GUILayout.Label("amount of time to start spawning waves:");
+            EditorGUI.Slider(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
         };
         //header name
         list.drawHeaderCallback = (Rect rect) => {

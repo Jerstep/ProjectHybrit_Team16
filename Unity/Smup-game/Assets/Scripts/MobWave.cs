@@ -15,4 +15,6 @@ public struct MobWave
     public GameObject enemyFormation;
 
     public int formationEnemyCount;
+
+    public float spawnValueYPos;
 }
