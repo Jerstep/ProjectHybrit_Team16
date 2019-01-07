@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private float speed;
     private Rigidbody RigidBullet;
     private UIManager uiManager;
-    private Player player1, player2;
 
     public bool heavy;
     public bool p1Owner, enemyOwner;
@@ -43,13 +42,24 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Player-1" || other.tag == "Player-2")
+        if (other.tag == "Player-1")
         {
-            other.GetComponent<Player>().hp -= 10;
+            if (uiManager.scoreP1 >= uiManager.scoreP2)
+            {
+                other.GetComponent<Player>().hp -= 10;
+            }  
+            Destroy(gameObject);
+        }
+        if (other.tag == "Player-2")
+        {
+            if (uiManager.scoreP2 >= uiManager.scoreP1)
+            {
+                other.GetComponent<Player>().hp -= 10;
+            }
             Destroy(gameObject);
         }
 
-         if (other.tag == "Enemy" && enemyOwner == false)
+        if (other.tag == "Enemy" && enemyOwner == false)
          {
             if (p1Owner)
             {

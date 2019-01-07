@@ -1060,11 +1060,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &540892648 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4809226361613158, guid: efe59062c5c31a445ab44b1ec13f9f29,
-    type: 2}
-  m_PrefabInternal: {fileID: 491296094}
 --- !u!1 &602379320
 GameObject:
   m_ObjectHideFlags: 0

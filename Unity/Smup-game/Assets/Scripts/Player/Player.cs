@@ -22,8 +22,6 @@ public class Player : MonoBehaviour
     [Header("Time in sec")]
     public float setCooldown;
 
-    public bool fire;
-
     // Use this for initialization
     void Start()
     {
@@ -34,7 +32,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         //left right
         if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         {
@@ -56,7 +54,7 @@ public class Player : MonoBehaviour
         {
             RigidPlayer.velocity = new Vector3(RigidPlayer.velocity.x, 0f, 0);
         }
-        */
+        
 
         //if (fire)
         //{

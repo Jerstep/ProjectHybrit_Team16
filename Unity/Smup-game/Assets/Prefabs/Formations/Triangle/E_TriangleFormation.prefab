@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23969798620453276}
   - component: {fileID: 135359514641394074}
   - component: {fileID: 114995856408946984}
+  - component: {fileID: 114517889623113860}
   m_Layer: 0
   m_Name: E_TriangleFormation
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784476487690530}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -319.4, y: -16.664051, z: -6.196563}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +86,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784476487690530}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114517889623113860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784476487690530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fe77d49a05af649b80f25e0fc59faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!114 &114995856408946984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,7 +112,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1322656322422558, guid: f5a180dcc978f174ba3afc31c7b8c8ba,
     type: 2}
   shape: {fileID: 1140883194300184, guid: e69e683e78e06864da8e8c611f8953fb, type: 2}
-  enemyAmount: 10
+  enemyAmount: 7
   radius: 8
   hitPoints: []
 --- !u!135 &135359514641394074
