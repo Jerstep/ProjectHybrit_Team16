@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
     public Vector3 spawnValues;
     int waveNumber = 1;
 
-    public float startWaitTime,spawnWaitTime, waveWaitTime;
+    public float startWaitTime, waveWaitTime;
     
 
 
@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour {
             Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
             wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
             Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
-            yield return new WaitForSeconds(spawnWaitTime);
+            yield return new WaitForSeconds(wave.spawnWaitTime);
         }
 
     }

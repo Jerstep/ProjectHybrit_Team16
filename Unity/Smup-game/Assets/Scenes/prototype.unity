@@ -1420,35 +1420,40 @@ MonoBehaviour:
     enemyFormation: {fileID: 1896061869978110, guid: 1b83f1b758b333b4b9e113ed7d90dd3f,
       type: 2}
     formationEnemyCount: 1
-    spawnValueYPos: 0
+    spawnValueYPos: 20
+    spawnWaitTime: 2
   - Type: 0
     enemyFormation: {fileID: 1876801480845260, guid: 9a2f3c41a50142a43921d2cb766d4ef6,
       type: 2}
     formationEnemyCount: 1
-    spawnValueYPos: 0
+    spawnValueYPos: 1.77
+    spawnWaitTime: 2
   - Type: 0
     enemyFormation: {fileID: 1616939747858194, guid: 443a6fe9cd546d649ad700710cbf09d8,
       type: 2}
     formationEnemyCount: 1
-    spawnValueYPos: 0
+    spawnValueYPos: 10.13
+    spawnWaitTime: 4.5
   - Type: 0
     enemyFormation: {fileID: 1525920438663460, guid: 7b097ef6f3168ca4cbf82c90e2b22360,
       type: 2}
     formationEnemyCount: 1
     spawnValueYPos: 0
+    spawnWaitTime: 2
   - Type: 0
     enemyFormation: {fileID: 1784476487690530, guid: 820b0d71b58ccec4d9779e638a94b4cd,
       type: 2}
     formationEnemyCount: 1
     spawnValueYPos: 0
+    spawnWaitTime: 2
   - Type: 0
     enemyFormation: {fileID: 1896061869978110, guid: 1b83f1b758b333b4b9e113ed7d90dd3f,
       type: 2}
     formationEnemyCount: 1
-    spawnValueYPos: 0
+    spawnValueYPos: 3.64
+    spawnWaitTime: 2
   spawnValues: {x: 0, y: 20, z: 0}
-  startWaitTime: 2.19
-  spawnWaitTime: 1
+  startWaitTime: 1
   waveWaitTime: 2
 --- !u!4 &1951407559
 Transform:

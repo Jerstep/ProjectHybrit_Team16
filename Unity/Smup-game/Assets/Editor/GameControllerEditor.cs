@@ -20,10 +20,12 @@ public class GameControllerEditor : Editor {
             EditorGUI.PropertyField(new Rect(rect.x + 60, rect.y, rect.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("enemyFormation"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("formationEnemyCount"), GUIContent.none);
            // EditorGUILayout.EndVertical();
-            GUILayout.Label("amount of time to start spawning waves:");
+           
             rect.y += EditorGUIUtility.singleLineHeight;
+            EditorGUI.Slider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
 
-            EditorGUI.Slider(new Rect(rect.x, rect.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
+            rect.y += EditorGUIUtility.singleLineHeight;
+            EditorGUI.Slider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnWaitTime"), 0, 20);
         };
         //header name
         list.drawHeaderCallback = (Rect rect) => {
@@ -31,7 +33,7 @@ public class GameControllerEditor : Editor {
         };
         list.elementHeightCallback = (int index) =>
         {
-            return EditorGUIUtility.singleLineHeight * 2 + 5;
+            return EditorGUIUtility.singleLineHeight * 2 + 30;
         };
             list.onSelectCallback = (ReorderableList l) => {
             var prefab = l.serializedProperty.GetArrayElementAtIndex(l.index).FindPropertyRelative("enemyFormation").objectReferenceValue as GameObject;
@@ -115,7 +117,7 @@ public class GameControllerEditor : Editor {
         gameControl.startWaitTime = EditorGUILayout.Slider(gameControl.startWaitTime, 1, 10);
 
         GUILayout.Label("time inbetween spawning waves:");
-        gameControl.spawnWaitTime = EditorGUILayout.Slider(gameControl.spawnWaitTime,1,10);
+       // gameControl.spawnWaitTime = EditorGUILayout.Slider(gameControl.spawnWaitTime,1,10);
 
 
     }
