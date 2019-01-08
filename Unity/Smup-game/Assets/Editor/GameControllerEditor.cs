@@ -13,20 +13,27 @@ public class GameControllerEditor : Editor {
         //draws the thing
         list = new ReorderableList(serializedObject, serializedObject.FindProperty("Waves"), true, true, true, true);
         list.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) => {
+            //EditorGUILayout.BeginVertical();
             var element = list.serializedProperty.GetArrayElementAtIndex(index);
             rect.y += 2;
             EditorGUI.PropertyField(new Rect(rect.x, rect.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("Type"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + 60, rect.y, rect.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("enemyFormation"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("formationEnemyCount"), GUIContent.none);
+           // EditorGUILayout.EndVertical();
             GUILayout.Label("amount of time to start spawning waves:");
-            EditorGUI.Slider(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
+            rect.y += EditorGUIUtility.singleLineHeight;
+
+            EditorGUI.Slider(new Rect(rect.x, rect.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
         };
         //header name
         list.drawHeaderCallback = (Rect rect) => {
             EditorGUI.LabelField(rect, "Enemy Waves");
         };
-
-        list.onSelectCallback = (ReorderableList l) => {
+        list.elementHeightCallback = (int index) =>
+        {
+            return EditorGUIUtility.singleLineHeight * 2 + 5;
+        };
+            list.onSelectCallback = (ReorderableList l) => {
             var prefab = l.serializedProperty.GetArrayElementAtIndex(l.index).FindPropertyRelative("enemyFormation").objectReferenceValue as GameObject;
             if (prefab) EditorGUIUtility.PingObject(prefab.gameObject);
         };
