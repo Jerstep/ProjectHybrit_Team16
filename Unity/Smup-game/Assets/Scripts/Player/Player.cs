@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public GameObject bulletPrefab, heavyBulletPrefab;
     public Transform firePoint;
-    public int hp;
+    public int playerHealth;
     public bool imActive;
     public bool player1;
 
@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
 
     [Header("Time in sec")]
     public float setCooldown;
+
+    private void Awake()
+    {
+        OnBulletHit.SendHit += TakeDamage;
+    }
 
     // Use this for initialization
     void Start()
@@ -32,7 +37,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Shoot();
+
         //left right
         if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         {
@@ -55,19 +61,9 @@ public class Player : MonoBehaviour
             RigidPlayer.velocity = new Vector3(RigidPlayer.velocity.x, 0f, 0);
         }
         
+        
 
-        //if (fire)
-        //{
-        //    Shoot();
-        //}
-
-        Shoot();
-        //else
-        //{
-        //    cooldown = setCooldown;
-        //}
-
-        if(hp <= 0)
+        if(playerHealth <= 0)
         {
             if(player1)
             {
@@ -80,6 +76,14 @@ public class Player : MonoBehaviour
             imActive = false;
             gameObject.SetActive(false);
         }
+    }
+
+    // Event for when player gets hit by an bullet thats not his own.
+    // Gameobject is the object this script is on, damage is send by the bullet.
+    // Retracts health from player.
+    private void TakeDamage(GameObject player, int hitDamage)
+    {
+        playerHealth -= hitDamage;
     }
 
     void Shoot()

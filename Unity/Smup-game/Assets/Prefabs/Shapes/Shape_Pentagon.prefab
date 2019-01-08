@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23116461540747194}
   - component: {fileID: 64660724777378870}
   - component: {fileID: 114354288694101100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shape_Pentagon
   m_TagString: shape
   m_Icon: {fileID: 0}

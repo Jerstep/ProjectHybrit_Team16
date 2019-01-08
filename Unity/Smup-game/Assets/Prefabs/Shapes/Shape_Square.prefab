@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23414709231594222}
   - component: {fileID: 64454286321722656}
   - component: {fileID: 114609027699425378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shape_Square
   m_TagString: shape
   m_Icon: {fileID: 0}
