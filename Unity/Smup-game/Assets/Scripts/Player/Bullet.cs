@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour {
         {
             if (uiManager.scoreP1 >= uiManager.scoreP2)
             {
-                other.GetComponent<Player>().hp -= 10;
+                other.GetComponent<Player>().playerHealth -= 10;
             }  
             Destroy(gameObject);
         }
@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour {
         {
             if (uiManager.scoreP2 >= uiManager.scoreP1)
             {
-                other.GetComponent<Player>().hp -= 10;
+                other.GetComponent<Player>().playerHealth -= 10;
             }
             Destroy(gameObject);
         }
