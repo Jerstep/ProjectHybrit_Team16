@@ -8,18 +8,22 @@ public class Bullet : MonoBehaviour {
     private Rigidbody RigidBullet;
     private UIManager uiManager;
 
-    public bool heavy;
-    public bool p1Owner, enemyOwner;
+    [Header("Bullet Speeds")]
+    public int heavySpeed;
+    public int normalSpeed;
+
+    [HideInInspector] public bool heavy;
+    [HideInInspector] public bool p1Owner, enemyOwner;
     // Use this for initialization
     void Start ()
     {
         if (!heavy)
         {
-            speed = 20;
+            speed = heavySpeed;
         }
         else
         {
-            speed = 5;
+            speed = normalSpeed;
         }
         RigidBullet = GetComponent<Rigidbody>();
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -46,7 +50,7 @@ public class Bullet : MonoBehaviour {
         {
             if (uiManager.scoreP1 >= uiManager.scoreP2)
             {
-                other.GetComponent<Player>().hp -= 10;
+                other.GetComponent<Player>().playerHealth -= 10;
             }  
             Destroy(gameObject);
         }
@@ -54,7 +58,7 @@ public class Bullet : MonoBehaviour {
         {
             if (uiManager.scoreP2 >= uiManager.scoreP1)
             {
-                other.GetComponent<Player>().hp -= 10;
+                other.GetComponent<Player>().playerHealth -= 10;
             }
             Destroy(gameObject);
         }

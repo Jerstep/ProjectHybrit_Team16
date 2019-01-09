@@ -15,7 +15,7 @@ public class BulletEnemy : MonoBehaviour {
 
         if (other.tag == "Player-1" || other.tag == "Player-2")
         {
-            other.GetComponent<Player>().hp -= 10;
+            other.GetComponent<Player>().playerHealth -= 10;
             Destroy(gameObject);
         }
         if (other.tag == "WallDeath")

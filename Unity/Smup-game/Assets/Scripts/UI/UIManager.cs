@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour {
         timeTextLeft.text = timemin + ":" + timeSeconds;
         scoreTextP1.text = scoreP1.ToString();
         scoreTextP2.text = scoreP2.ToString();
-        hpTextP1.text = player1.hp.ToString();
-        hpTextP2.text = player2.hp.ToString();
+        hpTextP1.text = player1.playerHealth.ToString();
+        hpTextP2.text = player2.playerHealth.ToString();
 
 
         if (time <= 0)

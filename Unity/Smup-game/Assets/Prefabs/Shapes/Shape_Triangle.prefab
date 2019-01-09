@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23223310315790352}
   - component: {fileID: 64503752858262368}
   - component: {fileID: 114645245103475234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shape_Triangle
   m_TagString: shape
   m_Icon: {fileID: 0}

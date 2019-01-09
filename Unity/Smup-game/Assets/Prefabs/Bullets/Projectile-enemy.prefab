@@ -274,7 +274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  heavy: 0
+  heavySpeed: 10
+  normalSpeed: 20
+  heavy: 1
   p1Owner: 0
   enemyOwner: 1
 --- !u!198 &198442171347386468

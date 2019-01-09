@@ -17,17 +17,14 @@ public class ShapeRay : MonoBehaviour {
     [SerializeField] private List<Vector3> hitPoints;
 
     private Vector3 temp = new Vector3();
+    private LayerMask layerMask;
 
     // Use this for initialization
     void Awake ()
     {
         position = this.transform.position;
+        layerMask = 1 << 8;
         CreateShape();
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
     }
 
     void CreateShape()
@@ -48,7 +45,7 @@ public class ShapeRay : MonoBehaviour {
 
         for(int i = 0; i < enemyAmount; i++)
         {
-            if(Physics.Raycast(transform.position, vec3, out hit, Mathf.Infinity))
+            if(Physics.Raycast(transform.position, vec3, out hit, Mathf.Infinity, layerMask))
             {
                 if(hit.collider.CompareTag("shape"))
                 {

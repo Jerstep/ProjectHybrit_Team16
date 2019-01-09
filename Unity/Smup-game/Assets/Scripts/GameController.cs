@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(3);
         player1.SetActive(true);
         player1.GetComponent<Player>().imActive = true;
-        player1.GetComponent<Player>().hp = 100;
+        player1.GetComponent<Player>().playerHealth = 100;
 
     }
 
@@ -70,6 +70,6 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(3);
         player2.SetActive(true);
         player2.GetComponent<Player>().imActive = true;
-        player2.GetComponent<Player>().hp = 100;
+        player2.GetComponent<Player>().playerHealth = 100;
     }
 }
