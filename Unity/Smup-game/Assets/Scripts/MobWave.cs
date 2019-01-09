@@ -8,7 +8,7 @@ public struct MobWave
 {
     public enum WaveType
     {
-        Formations
+        Enemy,Boss
     }
     public WaveType Type;
 

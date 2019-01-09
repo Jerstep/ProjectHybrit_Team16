@@ -13,16 +13,17 @@ public class GameControllerEditor : Editor {
         //draws the thing
         list = new ReorderableList(serializedObject, serializedObject.FindProperty("Waves"), true, true, true, true);
         list.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) => {
-            //EditorGUILayout.BeginVertical();
+
             var element = list.serializedProperty.GetArrayElementAtIndex(index);
             rect.y += 2;
             EditorGUI.PropertyField(new Rect(rect.x, rect.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("Type"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x + 60, rect.y, rect.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("enemyFormation"), GUIContent.none);
-            EditorGUI.PropertyField(new Rect(rect.x + rect.width - 30, rect.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("formationEnemyCount"), GUIContent.none);
-           // EditorGUILayout.EndVertical();
-           
+
             rect.y += EditorGUIUtility.singleLineHeight;
-            EditorGUI.Slider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), 1, 20);
+            EditorGUI.IntSlider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("formationEnemyCount"), 1, 10);
+
+            rect.y += EditorGUIUtility.singleLineHeight;
+            EditorGUI.Slider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnValueYPos"), -20, 20);
 
             rect.y += EditorGUIUtility.singleLineHeight;
             EditorGUI.Slider(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("spawnWaitTime"), 0, 20);
@@ -33,7 +34,7 @@ public class GameControllerEditor : Editor {
         };
         list.elementHeightCallback = (int index) =>
         {
-            return EditorGUIUtility.singleLineHeight * 2 + 30;
+            return EditorGUIUtility.singleLineHeight * 2 + 40;
         };
             list.onSelectCallback = (ReorderableList l) => {
             var prefab = l.serializedProperty.GetArrayElementAtIndex(l.index).FindPropertyRelative("enemyFormation").objectReferenceValue as GameObject;
@@ -69,35 +70,35 @@ public class GameControllerEditor : Editor {
             var guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Circle" });
             foreach (var guid in guids){
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Circle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Circle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
            
             //Hexagon
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Hexagon" });
             foreach (var guid in guids){
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Hexagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Hexagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
             
             //Pentagon
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Pentagon" });
             foreach (var guid in guids) {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Pentagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Pentagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
             
             // Square
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Square" });
             foreach (var guid in guids){
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Square/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Square/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
            
             //Triangle
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Triangle" });
             foreach (var guid in guids){
                 var path = AssetDatabase.GUIDToAssetPath(guid);
-                menu.AddItem(new GUIContent("Triangle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Formations, Path = path });
+                menu.AddItem(new GUIContent("Triangle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
 
             menu.ShowAsContext();
@@ -116,9 +117,6 @@ public class GameControllerEditor : Editor {
         GUILayout.Label("amount of time to start spawning waves:");
         gameControl.startWaitTime = EditorGUILayout.Slider(gameControl.startWaitTime, 1, 10);
 
-        GUILayout.Label("time inbetween spawning waves:");
-       // gameControl.spawnWaitTime = EditorGUILayout.Slider(gameControl.spawnWaitTime,1,10);
-
 
     }
 
@@ -129,7 +127,7 @@ public class GameControllerEditor : Editor {
         list.index = index;
         var element = list.serializedProperty.GetArrayElementAtIndex(index);
         element.FindPropertyRelative("Type").enumValueIndex = (int)data.Type;
-        element.FindPropertyRelative("formationEnemyCount").intValue = data.Type == MobWave.WaveType.Formations ? 1 : 20;
+        element.FindPropertyRelative("formationEnemyCount").intValue = data.Type == MobWave.WaveType.Enemy ? 1 : 20;
         element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(data.Path, typeof(GameObject)) as GameObject;
         serializedObject.ApplyModifiedProperties();
     }
