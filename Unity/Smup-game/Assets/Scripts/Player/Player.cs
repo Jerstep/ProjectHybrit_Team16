@@ -65,16 +65,7 @@ public class Player : MonoBehaviour
 
         if(playerHealth <= 0)
         {
-            if(player1)
-            {
-                uiMan.scoreP1 -= 100;
-            }
-            else
-            {
-                uiMan.scoreP2 -= 100;
-            }
-            imActive = false;
-            gameObject.SetActive(false);
+            PlayerDeath();
         }
     }
 
@@ -94,5 +85,20 @@ public class Player : MonoBehaviour
             cooldown = setCooldown;
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }        
+    }
+
+    void PlayerDeath()
+    {
+        OnBulletHit.SendHit -= TakeDamage;
+        if(player1)
+        {
+            uiMan.scoreP1 -= 100;
+        }
+        else
+        {
+            uiMan.scoreP2 -= 100;
+        }
+        imActive = false;
+        gameObject.SetActive(false);
     }
 }

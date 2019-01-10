@@ -7,8 +7,15 @@ public class OnBulletHit : MonoBehaviour {
     public delegate void BulletHit(GameObject other, int hitDamage);
     public static event BulletHit SendHit;
 
+    public GameObject owner;
+
     public string bulletOwner;
     public int damage;
+
+    private void Start()
+    {
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {

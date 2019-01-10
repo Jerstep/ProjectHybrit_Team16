@@ -52,8 +52,10 @@ public class Shoot : MonoBehaviour {
         {
             yield return new WaitForSeconds(waitTime);
             for (int i = 0; i < firePoint.Length; i++)
-            { 
-                Instantiate(bulletPrefab, firePoint[i].position, firePoint[i].rotation);
+            {
+                GameObject tempBullet = (GameObject) bulletPrefab;
+                Instantiate(tempBullet, firePoint[i].position, firePoint[i].rotation);
+                tempBullet.GetComponent<OnBulletHit>().bulletOwner = "Enemy";
             }
            
         }
