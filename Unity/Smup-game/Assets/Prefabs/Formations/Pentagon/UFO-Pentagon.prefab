@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114898650791831262}
   - component: {fileID: 114237536199020698}
   m_Layer: 0
-  m_Name: E_PentagonFormation
+  m_Name: UFO-Pentagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1322656322422558, guid: f5a180dcc978f174ba3afc31c7b8c8ba,
     type: 2}
   shape: {fileID: 1360149148246306, guid: f1e334f6e3dbbbb4992de17022b2cfb7, type: 2}
-  enemyAmount: 10
+  enemyAmount: 7
   radius: 8
   hitPoints: []
 --- !u!135 &135005334734744482

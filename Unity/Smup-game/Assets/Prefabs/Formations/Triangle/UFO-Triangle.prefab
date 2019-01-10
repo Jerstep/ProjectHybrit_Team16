@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114995856408946984}
   - component: {fileID: 114517889623113860}
   m_Layer: 0
-  m_Name: E_TriangleFormation
+  m_Name: UFO-Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

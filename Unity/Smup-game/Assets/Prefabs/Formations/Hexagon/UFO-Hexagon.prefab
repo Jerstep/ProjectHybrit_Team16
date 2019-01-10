@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114158169204949918}
   - component: {fileID: 114224751587670156}
   m_Layer: 0
-  m_Name: E_HexagonFormation
+  m_Name: UFO-Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1322656322422558, guid: f5a180dcc978f174ba3afc31c7b8c8ba,
     type: 2}
   shape: {fileID: 1053509590776764, guid: 03c165ef738cdfe4ba51e87fa0945d7a, type: 2}
-  enemyAmount: 5
+  enemyAmount: 10
   radius: 8
   hitPoints: []
 --- !u!114 &114224751587670156

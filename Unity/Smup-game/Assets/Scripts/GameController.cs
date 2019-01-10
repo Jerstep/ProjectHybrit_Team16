@@ -48,7 +48,10 @@ public class GameController : MonoBehaviour {
             spawnValues.y = wave.spawnValueYPos;
             Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, spawnValues.z);
             Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
-            wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
+            if(wave.Type == MobWave.WaveType.Enemy)
+            {
+                wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
+            }
             Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
             yield return new WaitForSeconds(wave.spawnWaitTime);
         }
