@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1616939747858194}
+  m_RootGameObject: {fileID: 1031522867629346}
   m_IsPrefabAsset: 1
---- !u!1 &1616939747858194
+--- !u!1 &1031522867629346
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4403499100257250}
-  - component: {fileID: 33142030004241178}
-  - component: {fileID: 23847531717346466}
-  - component: {fileID: 135005334734744482}
-  - component: {fileID: 114898650791831262}
-  - component: {fileID: 114237536199020698}
+  - component: {fileID: 4507855573157522}
+  - component: {fileID: 33603174962054096}
+  - component: {fileID: 23283424131310390}
+  - component: {fileID: 135689422393804456}
+  - component: {fileID: 114915543624678790}
+  - component: {fileID: 114806470409201912}
   m_Layer: 0
-  m_Name: UFO-Pentagon
+  m_Name: FastShip-Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4403499100257250
+--- !u!4 &4507855573157522
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.429688, y: 0.5422504, z: 2.4353094}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!23 &23847531717346466
+--- !u!23 &23283424131310390
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,48 +79,48 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33142030004241178
+--- !u!33 &33603174962054096
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114237536199020698
+--- !u!114 &114806470409201912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55fe77d49a05af649b80f25e0fc59faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &114898650791831262
+--- !u!114 &114915543624678790
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad0209ff04e3aaa4696f54a8d69de693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1322656322422558, guid: f5a180dcc978f174ba3afc31c7b8c8ba,
+  enemyPrefab: {fileID: 1628774459703238, guid: 4b663c74b5c9ab54ebc7720b62eac8bb,
     type: 2}
-  shape: {fileID: 1360149148246306, guid: f1e334f6e3dbbbb4992de17022b2cfb7, type: 2}
-  enemyAmount: 7
+  shape: {fileID: 1513018181565794, guid: 7723ccdaf06510d42908bbc61dead676, type: 2}
+  enemyAmount: 10
   radius: 8
   hitPoints: []
---- !u!135 &135005334734744482
+--- !u!135 &135689422393804456
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616939747858194}
+  m_GameObject: {fileID: 1031522867629346}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0

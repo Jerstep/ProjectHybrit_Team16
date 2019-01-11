@@ -48,7 +48,7 @@ public class Shoot : MonoBehaviour {
 
     IEnumerator ShootNow()
     {
-        while (waitTime == 1)
+        while (true)
         {
             yield return new WaitForSeconds(waitTime);
             for (int i = 0; i < firePoint.Length; i++)

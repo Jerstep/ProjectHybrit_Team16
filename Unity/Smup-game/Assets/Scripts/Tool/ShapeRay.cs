@@ -27,6 +27,14 @@ public class ShapeRay : MonoBehaviour {
         CreateShape();
     }
 
+    void Update()
+    {
+        if(transform.childCount <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void CreateShape()
     {
         GameObject shapeObject = Instantiate(shape, position, shape.transform.rotation);
