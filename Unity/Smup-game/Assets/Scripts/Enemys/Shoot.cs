@@ -25,16 +25,16 @@ public class Shoot : MonoBehaviour {
         float angleStep = 360f / _numberofProjectiles;
         float angle = 0f;
 
-        for (int i = 0; i <= _numberofProjectiles - 1; i++)
+        for (int i = 0; i < _numberofProjectiles; i++)
         {
             //directions calculations
-            float projectileDirXPos = startPoint.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
-            float projectileDirYPos = startPoint.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+            float projectileDirXPos = firePoint[i].position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+            float projectileDirYPos = firePoint[i].position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
 
             Vector3 projectileVector = new Vector3(projectileDirXPos, projectileDirYPos, 0);
-            Vector3 projectileMoveDir = (projectileVector - startPoint).normalized * speed;
+            Vector3 projectileMoveDir = (projectileVector - firePoint[i].position).normalized * speed;
 
-            GameObject tmpObj = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
+            GameObject tmpObj = Instantiate(bulletPrefab, firePoint[i].position, firePoint[i].rotation);
             tmpObj.GetComponent<Rigidbody>().velocity = new Vector3(projectileMoveDir.x, 0, 0);
 
             angle += angleStep;

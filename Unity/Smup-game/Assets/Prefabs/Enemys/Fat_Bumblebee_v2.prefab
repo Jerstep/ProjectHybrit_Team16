@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fce399432e88c49be8190bbfbaeed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfProjectiles: 4
+  numberOfProjectiles: 2
   waitTime: 1
   speed: 10
   bulletPrefab: {fileID: 1792656382722436, guid: 7ce1fba482af8224298a67d9faa0ba6c,
@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fce399432e88c49be8190bbfbaeed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfProjectiles: 4
+  numberOfProjectiles: 2
   waitTime: 1
   speed: 10
   bulletPrefab: {fileID: 1792656382722436, guid: 7ce1fba482af8224298a67d9faa0ba6c,

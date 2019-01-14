@@ -9,6 +9,8 @@ public class WaveData
     //public GameController gameController;
     public int waveSize;
 
+    public MobWave.WaveType type;
+
     public int [] enumTypes;
 
     public string[] waveTypes;
@@ -37,4 +39,6 @@ public class WaveData
             spawnWaitTime[i] = controller.Waves[i].spawnWaitTime;
         }
     }
+
+    // global unique identefier guid. opvragen van de asset database
 }

@@ -145,6 +145,9 @@ public class GameControllerEditor : Editor {
         // For loading he stuff
         if(GUILayout.Button("Load Waves"))
         {
+            while(list.count > 0) {
+                ReorderableList.defaultBehaviours.DoRemoveButton(list);
+            }
             gameControl.Waves = new List<MobWave>();
 
             CostumWaveInspector();

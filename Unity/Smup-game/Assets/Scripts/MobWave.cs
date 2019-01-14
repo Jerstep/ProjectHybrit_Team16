@@ -6,6 +6,7 @@ using System;
 [System.Serializable]
 public struct MobWave
 {
+    [System.Serializable]
     public enum WaveType
     {
         Enemy,Boss

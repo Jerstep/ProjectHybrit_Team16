@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0209ff04e3aaa4696f54a8d69de693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1628774459703238, guid: 4b663c74b5c9ab54ebc7720b62eac8bb,
+  enemyPrefab: {fileID: 1628774459703238, guid: 31d3fbf849c42e345a113f94cc29e35a,
     type: 2}
   shape: {fileID: 1107809385660292, guid: 70321bba0a1c8b949bfeb59d97f85d9a, type: 2}
   enemyAmount: 10
