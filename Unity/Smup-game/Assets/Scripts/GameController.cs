@@ -55,7 +55,6 @@ public class GameController : MonoBehaviour {
 
     }
 
-
     IEnumerator TurnOnP1()
     {
         yield return new WaitForSeconds(3);
@@ -71,5 +70,14 @@ public class GameController : MonoBehaviour {
         player2.SetActive(true);
         player2.GetComponent<Player>().imActive = true;
         player2.GetComponent<Player>().playerHealth = 100;
+    }
+
+    public void SaveWave()
+    {
+        SaveSystem.SaveWaves(this);
+    }
+
+    public void LoadWave()
+    {
     }
 }

@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  heavySpeed: 10
+  normalSpeed: 15
   heavy: 0
   p1Owner: 0
   enemyOwner: 0

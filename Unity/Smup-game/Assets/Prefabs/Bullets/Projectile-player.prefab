@@ -274,8 +274,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  heavySpeed: 10
+  normalSpeed: 15
   heavy: 0
   p1Owner: 1
+  enemyOwner: 0
 --- !u!198 &198166057040006706
 ParticleSystem:
   m_ObjectHideFlags: 1

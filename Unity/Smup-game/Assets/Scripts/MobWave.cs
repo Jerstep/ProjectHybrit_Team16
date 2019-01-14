@@ -10,6 +10,7 @@ public struct MobWave
     {
         Enemy,Boss
     }
+
     public WaveType Type;
 
     public GameObject enemyFormation;

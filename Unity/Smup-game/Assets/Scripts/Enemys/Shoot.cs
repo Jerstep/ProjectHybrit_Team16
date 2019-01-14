@@ -20,12 +20,7 @@ public class Shoot : MonoBehaviour {
         StartCoroutine(ShootNow());
     }
 
-
-
-
-
-
-   /* private void SpawnProjectile(int _numberofProjectiles)
+    private void SpawnProjectile(int _numberofProjectiles)
     {
         float angleStep = 360f / _numberofProjectiles;
         float angle = 0f;
@@ -44,29 +39,30 @@ public class Shoot : MonoBehaviour {
 
             angle += angleStep;
         }
-    }*/
+    }
 
     IEnumerator ShootNow()
     {
-        while (waitTime == 1)
+
+        //while (waitTime == 1)
+        //{
+        //    yield return new WaitForSeconds(waitTime);
+        //    for (int i = 0; i < firePoint.Length; i++)
+        //    {
+        //        GameObject tempBullet = (GameObject) bulletPrefab;
+        //        Instantiate(tempBullet, firePoint[i].position, firePoint[i].rotation);
+        //        tempBullet.GetComponent<OnBulletHit>().bulletOwner = "Enemy";
+        //    }
+
+        //}
+
+
+        while(waitTime == 1)
         {
             yield return new WaitForSeconds(waitTime);
-            for (int i = 0; i < firePoint.Length; i++)
-            {
-                GameObject tempBullet = (GameObject) bulletPrefab;
-                Instantiate(tempBullet, firePoint[i].position, firePoint[i].rotation);
-                tempBullet.GetComponent<OnBulletHit>().bulletOwner = "Enemy";
-            }
-           
+            startPoint = transform.position;
+            SpawnProjectile(numberOfProjectiles);
         }
-            
-
-        /* while(waitTime == 1)
-         {
-             yield return new WaitForSeconds(waitTime);
-             startPoint = transform.position;
-             SpawnProjectile(numberOfProjectiles);
-         }*/
 
     }
 }

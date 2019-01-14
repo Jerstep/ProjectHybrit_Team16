@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        OnBulletHit.SendHit += TakeDamage;
+        //OnBulletHit.SendHit += TakeDamage;
     }
 
     // Use this for initialization
@@ -72,10 +72,10 @@ public class Player : MonoBehaviour
     // Event for when player gets hit by an bullet thats not his own.
     // Gameobject is the object this script is on, damage is send by the bullet.
     // Retracts health from player.
-    private void TakeDamage(GameObject player, int hitDamage)
-    {
-        playerHealth -= hitDamage;
-    }
+    //private void TakeDamage(GameObject player, int hitDamage)
+    //{
+    //    playerHealth -= hitDamage;
+    //}
 
     void Shoot()
     {
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
     void PlayerDeath()
     {
-        OnBulletHit.SendHit -= TakeDamage;
+        //OnBulletHit.SendHit -= TakeDamage;
         if(player1)
         {
             uiMan.scoreP1 -= 100;

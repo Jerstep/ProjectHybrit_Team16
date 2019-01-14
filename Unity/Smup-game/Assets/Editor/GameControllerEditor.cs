@@ -10,6 +10,11 @@ public class GameControllerEditor : Editor {
     private ReorderableList list;
 
     private void OnEnable(){
+        CostumWaveInspector();
+    }
+
+    private void CostumWaveInspector()
+    {
         //draws the thing
         list = new ReorderableList(serializedObject, serializedObject.FindProperty("Waves"), true, true, true, true);
         list.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) => {
@@ -36,9 +41,9 @@ public class GameControllerEditor : Editor {
         {
             return EditorGUIUtility.singleLineHeight * 2 + 40;
         };
-            list.onSelectCallback = (ReorderableList l) => {
+        list.onSelectCallback = (ReorderableList l) => {
             var prefab = l.serializedProperty.GetArrayElementAtIndex(l.index).FindPropertyRelative("enemyFormation").objectReferenceValue as GameObject;
-            if (prefab) EditorGUIUtility.PingObject(prefab.gameObject);
+            if(prefab) EditorGUIUtility.PingObject(prefab.gameObject);
         };
 
         list.onCanRemoveCallback = (ReorderableList l) => {
@@ -46,7 +51,7 @@ public class GameControllerEditor : Editor {
         };
         //remove wave
         list.onRemoveCallback = (ReorderableList l) => {
-            if (EditorUtility.DisplayDialog("Warning!", "Are you sure you want to delete the wave?", "Yes", "No"))
+            if(EditorUtility.DisplayDialog("Warning!", "Are you sure you want to delete the wave?", "Yes", "No"))
             {
                 ReorderableList.defaultBehaviours.DoRemoveButton(l);
             }
@@ -65,38 +70,43 @@ public class GameControllerEditor : Editor {
         list.onAddDropdownCallback = (Rect buttonRect, ReorderableList l) => {
             var menu = new GenericMenu();
             //create the submenus for dropdown
-           
+
             //Circle
             var guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Circle" });
-            foreach (var guid in guids){
+            foreach(var guid in guids)
+            {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 menu.AddItem(new GUIContent("Circle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
-           
+
             //Hexagon
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Hexagon" });
-            foreach (var guid in guids){
+            foreach(var guid in guids)
+            {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 menu.AddItem(new GUIContent("Hexagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
-            
+
             //Pentagon
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Pentagon" });
-            foreach (var guid in guids) {
+            foreach(var guid in guids)
+            {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 menu.AddItem(new GUIContent("Pentagon/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
-            
+
             // Square
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Square" });
-            foreach (var guid in guids){
+            foreach(var guid in guids)
+            {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 menu.AddItem(new GUIContent("Square/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
-           
+
             //Triangle
             guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Triangle" });
-            foreach (var guid in guids){
+            foreach(var guid in guids)
+            {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
                 menu.AddItem(new GUIContent("Triangle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
@@ -107,7 +117,7 @@ public class GameControllerEditor : Editor {
 
     public override void OnInspectorGUI(){
         //base.OnInspectorGUI();
-
+        
         serializedObject.Update();
         list.DoLayoutList();
         serializedObject.ApplyModifiedProperties();
@@ -117,6 +127,45 @@ public class GameControllerEditor : Editor {
         GUILayout.Label("amount of time to start spawning waves:");
         gameControl.startWaitTime = EditorGUILayout.Slider(gameControl.startWaitTime, 1, 10);
 
+        // For saving the stuff
+        if(GUILayout.Button("Save Waves"))
+        {
+            SaveSystem.SaveWaves(gameControl);
+        }
+
+        // For loading he stuff
+        if(GUILayout.Button("Load Waves"))
+        {
+            gameControl.Waves = new List<MobWave>();
+
+            CostumWaveInspector();
+            
+            //list.serializedProperty.GetArrayElementAtIndex(index);
+            WaveData data = SaveSystem.LoadWaves();
+            for(int i = 0; i < data.waveSize; i++)
+            {
+
+                var target = data.waveTypes[i];
+
+                var index = list.serializedProperty.arraySize;
+                list.serializedProperty.arraySize++;
+                list.index = index;
+                var element = list.serializedProperty.GetArrayElementAtIndex(index);
+                element.FindPropertyRelative("Type").enumValueIndex = 0;
+                element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[i];
+                element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[i];
+                element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[i];
+                element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Formations/E_CircleFormation.prefab", typeof(GameObject)) as GameObject;
+                serializedObject.ApplyModifiedProperties();
+
+                
+                serializedObject.ApplyModifiedProperties();
+            }
+
+            serializedObject.Update();
+            list.DoLayoutList();
+
+        }
 
     }
 

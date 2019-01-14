@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 114700960111831284}
   - component: {fileID: 54232669111888176}
   - component: {fileID: 65490197807115154}
+  - component: {fileID: 114776139185503456}
   m_Layer: 0
   m_Name: Projectile-enemy
   m_TagString: Bullet
@@ -279,6 +280,17 @@ MonoBehaviour:
   heavy: 1
   p1Owner: 0
   enemyOwner: 1
+--- !u!114 &114776139185503456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792656382722436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ff681e2668efe4d845253d8ea42923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198442171347386468
 ParticleSystem:
   m_ObjectHideFlags: 1
