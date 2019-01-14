@@ -19,7 +19,7 @@ public class TargetPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameCon = GameObject.Find("WaveController").GetComponent<GameController>();
+        GameCon = GameObject.Find("GameController").GetComponent<GameController>();
         playerOne = GameCon.player1;
         playerTwo = GameCon.player2;
     }

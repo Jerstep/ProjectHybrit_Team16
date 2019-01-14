@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static void SaveWaves(GameController controller)
+    public static void SaveWaves(WaveController controller)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/Waves.shmup";

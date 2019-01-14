@@ -627,6 +627,62 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1 &243888650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243888652}
+  - component: {fileID: 243888651}
+  m_Layer: 0
+  m_Name: WaveController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243888651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243888650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1e98ad44388e747ad298ee6cada740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waves:
+  - Type: 0
+    enemyFormation: {fileID: 1829706065899738, guid: e7a076bfae0bf9f43a7071c3b5342f3f,
+      type: 2}
+    formationEnemyCount: 7
+    spawnValueYPos: -7.5
+    spawnWaitTime: 8.3
+  - Type: 0
+    enemyFormation: {fileID: 1620207349255998, guid: df0afcd15d702d24cb855b87c081b55d,
+      type: 2}
+    formationEnemyCount: 4
+    spawnValueYPos: 0
+    spawnWaitTime: 11.8
+  spawnValues: {x: 0, y: 0, z: 0}
+  startWaitTime: 1
+  waveWaitTime: 0
+--- !u!4 &243888652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243888650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.475943, y: 7.5876856, z: -2.8706703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254130696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1426,7 @@ GameObject:
   - component: {fileID: 635628294}
   - component: {fileID: 635628293}
   m_Layer: 0
-  m_Name: WaveController
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1387,22 +1443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a9abad19761304090557cc15d8e06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  Waves:
-  - Type: 0
-    enemyFormation: {fileID: 0}
-    formationEnemyCount: 5
-    spawnValueYPos: -4.5
-    spawnWaitTime: 13.4
-  - Type: 0
-    enemyFormation: {fileID: 0}
-    formationEnemyCount: 6
-    spawnValueYPos: -8.8
-    spawnWaitTime: 11
-  spawnValues: {x: 0, y: 0, z: 0}
-  startWaitTime: 1
-  waveWaitTime: 0
+  player1: {fileID: 69812094}
+  player2: {fileID: 1962490542}
 --- !u!4 &635628294
 Transform:
   m_ObjectHideFlags: 0

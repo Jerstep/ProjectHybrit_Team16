@@ -9,7 +9,8 @@ public struct MobWave
     [System.Serializable]
     public enum WaveType
     {
-        Enemy,Boss
+        Enemy,
+        Boss
     }
 
     public WaveType Type;

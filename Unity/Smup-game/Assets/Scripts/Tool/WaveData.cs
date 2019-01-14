@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [System.Serializable]
 public class WaveData
@@ -9,7 +10,7 @@ public class WaveData
     //public GameController gameController;
     public int waveSize;
 
-    public MobWave.WaveType type;
+    public MobWave.WaveType [] type;
 
     public int [] enumTypes;
 
@@ -20,11 +21,13 @@ public class WaveData
     public float [] spawnWaitTime;
 
 
-    public WaveData(GameController controller)
+    public WaveData(WaveController controller)
     {
         // Turns all seporate variables into lists of variables (the vars you use in the game controller)
+        
         waveSize = controller.Waves.Count;
 
+        type = new MobWave.WaveType [waveSize];
         waveTypes = new string [waveSize];
         formationEnemyCount = new int [waveSize];
         spawnValueYPos = new float [waveSize];
@@ -32,11 +35,13 @@ public class WaveData
 
         for(int i = 0; i < waveSize; i++)
         {
-            //enumType[i] = controller.Waves.wave
-            waveTypes[i] = controller.Waves[i].enemyFormation.ToString();
+            //for(int e = 0; e < controller.Waves.gui)
+            type[i] = controller.Waves[i].Type;
+            waveTypes[i] = AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation);
             formationEnemyCount[i] = controller.Waves[i].formationEnemyCount;
             spawnValueYPos[i] = controller.Waves[i].spawnValueYPos;
             spawnWaitTime[i] = controller.Waves[i].spawnWaitTime;
+            Debug.Log(waveTypes[i]);
         }
     }
 
