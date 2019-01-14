@@ -43,21 +43,7 @@ public class Shoot : MonoBehaviour {
 
     IEnumerator ShootNow()
     {
-
-        //while (waitTime == 1)
-        //{
-        //    yield return new WaitForSeconds(waitTime);
-        //    for (int i = 0; i < firePoint.Length; i++)
-        //    {
-        //        GameObject tempBullet = (GameObject) bulletPrefab;
-        //        Instantiate(tempBullet, firePoint[i].position, firePoint[i].rotation);
-        //        tempBullet.GetComponent<OnBulletHit>().bulletOwner = "Enemy";
-        //    }
-
-        //}
-
-
-        while(waitTime == 1)
+        while (true)
         {
             yield return new WaitForSeconds(waitTime);
             startPoint = transform.position;

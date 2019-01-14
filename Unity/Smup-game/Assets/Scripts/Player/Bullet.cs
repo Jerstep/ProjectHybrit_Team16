@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        if (!heavy)
+        if (heavy)
         {
             speed = heavySpeed;
         }

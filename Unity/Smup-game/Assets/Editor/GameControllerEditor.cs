@@ -111,6 +111,15 @@ public class GameControllerEditor : Editor {
                 menu.AddItem(new GUIContent("Triangle/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
             }
 
+            //Boss
+            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Boss" });
+            foreach (var guid in guids)
+            {
+                var path = AssetDatabase.GUIDToAssetPath(guid);
+                menu.AddItem(new GUIContent("Boss/" + Path.GetFileNameWithoutExtension(path)), false, clickHandler, new WaveCreationParams() { Type = MobWave.WaveType.Enemy, Path = path });
+            }
+
+
             menu.ShowAsContext();
         };
     }
