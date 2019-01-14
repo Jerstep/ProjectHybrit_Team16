@@ -35,13 +35,11 @@ public class WaveData
 
         for(int i = 0; i < waveSize; i++)
         {
-            //for(int e = 0; e < controller.Waves.gui)
             type[i] = controller.Waves[i].Type;
-            waveTypes[i] = AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation);
+            waveTypes[i] = controller.Waves[i].enemyFormation.ToString();
             formationEnemyCount[i] = controller.Waves[i].formationEnemyCount;
             spawnValueYPos[i] = controller.Waves[i].spawnValueYPos;
             spawnWaitTime[i] = controller.Waves[i].spawnWaitTime;
-            Debug.Log(waveTypes[i]);
         }
     }
 

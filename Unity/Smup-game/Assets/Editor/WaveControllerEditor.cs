@@ -149,26 +149,43 @@ public class WaveControllerEditor : Editor {
                 ReorderableList.defaultBehaviours.DoRemoveButton(list);
             }
             waveControl.Waves = new List<MobWave>();
-
+            string[] tempData = AssetDatabase.FindAssets("", new[] 
+            {
+                "Assets/Prefabs/Formations/Circle",
+                "Assets/Prefabs/Formations/Hexagon",
+                "Assets/Prefabs/Formations/Pentagon",
+                "Assets/Prefabs/Formations/Square",
+                "Assets/Prefabs/Formations/Triangle"
+            });
             CostumWaveInspector();
             
             //list.serializedProperty.GetArrayElementAtIndex(index);
             WaveData data = SaveSystem.LoadWaves();
             for(int i = 0; i < data.waveSize; i++)
             {
-                var target = data.waveTypes[i];
+                string tempFormation = data.waveTypes[i];
+
 
                 var index = list.serializedProperty.arraySize;
                 list.serializedProperty.arraySize++;
                 list.index = index;
+
                 var element = list.serializedProperty.GetArrayElementAtIndex(index);
                 element.FindPropertyRelative("Type").enumValueIndex = (int)data.type[i];
                 element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[i];
                 element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[i];
                 element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[i];
-                element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(data.waveTypes.ToString(), typeof(GameObject)) as GameObject;
-                serializedObject.ApplyModifiedProperties();
-                
+
+                foreach(string formation in tempData)
+                {
+                    if(formation == formation + "/" + tempFormation)
+                    {
+                        element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(formation + "/" + tempFormation, typeof(GameObject)) as GameObject;
+                    }
+                }
+
+
+
                 serializedObject.ApplyModifiedProperties();
             }
 
