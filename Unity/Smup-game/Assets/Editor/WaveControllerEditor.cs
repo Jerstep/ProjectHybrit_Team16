@@ -138,61 +138,46 @@ public class WaveControllerEditor : Editor {
 
         // For saving the stuff
         if(GUILayout.Button("Save Waves"))
-        {
+        {            
             SaveSystem.SaveWaves(waveControl);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
 
         // For loading he stuff
         if(GUILayout.Button("Load Waves"))
         {
-            while(list.count > 0) {
-                ReorderableList.defaultBehaviours.DoRemoveButton(list);
-            }
-            waveControl.Waves = new List<MobWave>();
-            string[] tempData = AssetDatabase.FindAssets("", new[] 
-            {
-                "Assets/Prefabs/Formations/Circle",
-                "Assets/Prefabs/Formations/Hexagon",
-                "Assets/Prefabs/Formations/Pentagon",
-                "Assets/Prefabs/Formations/Square",
-                "Assets/Prefabs/Formations/Triangle"
-            });
-            CostumWaveInspector();
+            //while(list.count > 0) {
+            //    ReorderableList.defaultBehaviours.DoRemoveButton(list);
+            //}
+            //CostumWaveInspector();
             
             //list.serializedProperty.GetArrayElementAtIndex(index);
             WaveData data = SaveSystem.LoadWaves();
+
             for(int i = 0; i < data.waveSize; i++)
             {
-                string tempFormation = data.waveTypes[i];
-
 
                 var index = list.serializedProperty.arraySize;
                 list.serializedProperty.arraySize++;
                 list.index = index;
 
                 var element = list.serializedProperty.GetArrayElementAtIndex(index);
-                element.FindPropertyRelative("Type").enumValueIndex = (int)data.type[i];
-                element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[i];
-                element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[i];
-                element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[i];
+                element.FindPropertyRelative("Type").enumValueIndex = (int)data.type[0];
+                element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[0];
+                element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[0];
+                element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[0];
+                Debug.Log("Load Path " + data.waveTypes[i]);
 
-                foreach(string formation in tempData)
-                {
-                    if(formation == formation + "/" + tempFormation)
-                    {
-                        element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(formation + "/" + tempFormation, typeof(GameObject)) as GameObject;
-                    }
-                }
+                element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(data.waveTypes[i], typeof(GameObject));
 
-
+                //Application.dataPath.Replace("Assets", "") + AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
 
                 serializedObject.ApplyModifiedProperties();
             }
-
             serializedObject.Update();
             list.DoLayoutList();
         }
-
     }
 
     private void clickHandler(object target){

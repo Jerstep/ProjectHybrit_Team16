@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -36,7 +37,9 @@ public class WaveData
         for(int i = 0; i < waveSize; i++)
         {
             type[i] = controller.Waves[i].Type;
-            waveTypes[i] = controller.Waves[i].enemyFormation.ToString();
+            //waveTypes[i] = Application.dataPath.Replace("Assets","")  + AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
+            waveTypes[i] = AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
+            Debug.Log("Save Path " + waveTypes[i]);
             formationEnemyCount[i] = controller.Waves[i].formationEnemyCount;
             spawnValueYPos[i] = controller.Waves[i].spawnValueYPos;
             spawnWaitTime[i] = controller.Waves[i].spawnWaitTime;
