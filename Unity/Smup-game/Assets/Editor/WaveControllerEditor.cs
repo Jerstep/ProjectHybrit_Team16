@@ -8,7 +8,6 @@ using System.IO;
 [CustomEditor(typeof(WaveController))]
 public class WaveControllerEditor : Editor {
     private ReorderableList list;
-    public string [] guids;
 
     private void OnEnable(){
         CostumWaveInspector();
@@ -73,7 +72,7 @@ public class WaveControllerEditor : Editor {
             //create the submenus for dropdown
 
             //Circle DataPath
-            guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Circle" });
+            var guids = AssetDatabase.FindAssets("", new[] { "Assets/Prefabs/Formations/Circle" });
             foreach(var guid in guids)
             {
                 var path = AssetDatabase.GUIDToAssetPath(guid);
@@ -138,48 +137,57 @@ public class WaveControllerEditor : Editor {
 
         // For saving the stuff
         if(GUILayout.Button("Save Waves"))
-        {            
+        {
+            Debug.Log("Saving...");
             SaveSystem.SaveWaves(waveControl);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+            Debug.Log("Saving Complete!");
         }
 
         // For loading he stuff
         if(GUILayout.Button("Load Waves"))
         {
-            //while(list.count > 0) {
+            Debug.Log("Loading...");
+            int tempListCount = list.count;
+
+            for(int i = 0; i < tempListCount; i++){
+                ReorderableList.defaultBehaviours.DoRemoveButton(list);
+            }
+
+            //while(list.count > 0)
+            //{
             //    ReorderableList.defaultBehaviours.DoRemoveButton(list);
             //}
-            //CostumWaveInspector();
-            
-            //list.serializedProperty.GetArrayElementAtIndex(index);
-            WaveData data = SaveSystem.LoadWaves();
-
-            for(int i = 0; i < data.waveSize; i++)
-            {
-
-                var index = list.serializedProperty.arraySize;
-                list.serializedProperty.arraySize++;
-                list.index = index;
-
-                var element = list.serializedProperty.GetArrayElementAtIndex(index);
-                element.FindPropertyRelative("Type").enumValueIndex = (int)data.type[0];
-                element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[0];
-                element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[0];
-                element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[0];
-                Debug.Log("Load Path " + data.waveTypes[i]);
-
-                element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(data.waveTypes[i], typeof(GameObject));
-
-                //Application.dataPath.Replace("Assets", "") + AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
-
-                serializedObject.ApplyModifiedProperties();
-            }
-            serializedObject.Update();
-            list.DoLayoutList();
+            CostumWaveInspector();
+            LoadWaves();
         }
     }
 
+    private void LoadWaves()
+    {
+        WaveData data = SaveSystem.LoadWaves();
+        for(int i = 0; i < data.waveSize; i++)
+        {
+            var index = list.serializedProperty.arraySize;
+            list.serializedProperty.arraySize++;
+            list.index = index;
+
+            var element = list.serializedProperty.GetArrayElementAtIndex(index);
+            element.FindPropertyRelative("Type").enumValueIndex = (int)data.type[i];
+            element.FindPropertyRelative("formationEnemyCount").intValue = data.formationEnemyCount[i];
+            element.FindPropertyRelative("spawnValueYPos").floatValue = data.spawnValueYPos[i];
+            element.FindPropertyRelative("spawnWaitTime").floatValue = data.spawnWaitTime[i];
+            Debug.Log("Load Path: " + data.waveTypes[i]);
+
+            element.FindPropertyRelative("enemyFormation").objectReferenceValue = AssetDatabase.LoadAssetAtPath(data.waveTypes[i], typeof(GameObject));
+
+            serializedObject.ApplyModifiedProperties();
+        }
+        serializedObject.Update();
+        list.DoLayoutList();
+        Debug.Log("Loading Complete!");
+    }
     private void clickHandler(object target){
         var data = (WaveCreationParams)target;
         var index = list.serializedProperty.arraySize;
