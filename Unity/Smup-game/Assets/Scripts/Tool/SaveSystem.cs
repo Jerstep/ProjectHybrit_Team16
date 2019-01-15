@@ -6,27 +6,34 @@ public static class SaveSystem
 {
     public static void SaveWaves(WaveController controller)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Waves.shmup";
-        FileStream stream = new FileStream(path, FileMode.Create);
+        //BinaryFormatter formatter = new BinaryFormatter();
+        
+        string path = Application.dataPath + "/Resources/Waves.json";
+        //FileStream stream = new FileStream(path, FileMode.Create);
 
         WaveData data = new WaveData(controller);
 
-        formatter.Serialize(stream, data);
-        stream.Close();
+        string jsonData = JsonUtility.ToJson(data);
+        //formatter.Serialize(stream, data);
+        //stream.Close();
+        File.WriteAllText(path, jsonData);
     }
 
     public static WaveData LoadWaves()
-    {
-        string path = Application.persistentDataPath + "/Waves.shmup";
+    { 
+        string path = Application.dataPath + "/Resources/Waves.json";
+
         if(File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            //BinaryFormatter formatter = new BinaryFormatter();
+            //FileStream stream = new FileStream(path, FileMode.Open);
 
-            WaveData data =  formatter.Deserialize(stream) as WaveData;
-            stream.Close();
-            return data;
+            var data = File.ReadAllText(path);
+            WaveData waveData = JsonUtility.FromJson<WaveData>(data);
+
+            //WaveData data =  formatter.Deserialize(stream) as WaveData;
+            //stream.Close();
+            return waveData;
         }
         else
         {
