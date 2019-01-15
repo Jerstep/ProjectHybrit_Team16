@@ -13,6 +13,7 @@ TagManager:
   - Player-2
   - ARTarget
   - shape
+  - Boss
   layers:
   - Default
   - TransparentFX

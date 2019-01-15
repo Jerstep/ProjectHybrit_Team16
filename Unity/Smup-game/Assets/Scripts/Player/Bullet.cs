@@ -12,6 +12,9 @@ public class Bullet : MonoBehaviour {
     public int heavySpeed;
     public int normalSpeed;
 
+    [Header("Particle on collision")]
+    public GameObject hitParticle;
+
     [HideInInspector] public bool heavy;
     [HideInInspector] public bool p1Owner, enemyOwner;
     // Use this for initialization
@@ -51,7 +54,8 @@ public class Bullet : MonoBehaviour {
             if (uiManager.scoreP1 >= uiManager.scoreP2)
             {
                 other.GetComponent<Player>().playerHealth -= 10;
-            }  
+            }
+            Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
         if (other.tag == "Player-2")
@@ -60,6 +64,7 @@ public class Bullet : MonoBehaviour {
             {
                 other.GetComponent<Player>().playerHealth -= 10;
             }
+            Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
 
@@ -74,11 +79,28 @@ public class Bullet : MonoBehaviour {
                 uiManager.scoreP2 += 10;
             }
 
-            Destroy(other.gameObject);
+            other.GetComponentInParent<Enemy>().enemyHp -= 10;
+
             if (!heavy)
             {
+                Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
             }              
+        }
+
+        if (other.tag == "Boss" && enemyOwner == false)
+        {
+            if (p1Owner)
+            {
+                uiManager.scoreP1 += 10;
+            }
+            else
+            {
+                uiManager.scoreP2 += 10;
+            }
+            other.GetComponentInParent<Boss>().bossHp -= 1;
+            Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
         }
 
         if (other.tag == "Walls" || other.tag == "WallDeath" /*|| other.tag == "Bullet"*/)

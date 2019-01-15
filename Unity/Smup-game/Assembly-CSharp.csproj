@@ -61,9 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FollowARObject.cs" />
-    <Compile Include="Assets\FollowARObjectP2.cs" />
-    <Compile Include="Assets\moveCircle.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -109,6 +106,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Boss.cs" />
     <Compile Include="Assets\Scripts\Enemys\BulletEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemys\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemys\Hazard.cs" />
@@ -117,6 +115,7 @@
     <Compile Include="Assets\Scripts\Events\OnBulletHit.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\MobWave.cs" />
+    <Compile Include="Assets\Scripts\ParticleRemover.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\ProjectileMove.cs" />
@@ -128,10 +127,16 @@
     <Compile Include="Assets\Scripts\Tool\EnemyBuilder.cs" />
     <Compile Include="Assets\Scripts\Tool\PathBase.cs" />
     <Compile Include="Assets\Scripts\Tool\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Tool\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Tool\ShapeRay.cs" />
     <Compile Include="Assets\Scripts\Tool\TargetPlayer.cs" />
+    <Compile Include="Assets\Scripts\Tool\WaveController.cs" />
+    <Compile Include="Assets\Scripts\Tool\WaveData.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Utility\FollowARObject.cs" />
+    <Compile Include="Assets\Scripts\Utility\FollowARObjectP2.cs" />
+    <Compile Include="Assets\Scripts\Utility\moveCircle.cs" />
     <Compile Include="Assets\Scripts\Utility\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Utility\VirtualButtonPressed.cs" />
     <Compile Include="Assets\Scripts\Utility\VirtualButtonPressedP2.cs" />
@@ -145,6 +150,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+    <None Include="Assets\StreamingAssets\Vuforia\smup_Game_Local.xml" />
     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
@@ -189,7 +195,6 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
-    <None Include="Assets\StreamingAssets\Vuforia\smup_Game_Local.xml" />
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>D:/Documents/GitHub/ProjectHybrit_Team16/Unity/Smup-game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>

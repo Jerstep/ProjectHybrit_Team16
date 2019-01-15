@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114973700612828750}
   - component: {fileID: 114159711189311480}
   - component: {fileID: 65760443191364634}
+  - component: {fileID: 114194515772004830}
   m_Layer: 0
   m_Name: smallShipV2
   m_TagString: Enemy
@@ -220,6 +221,20 @@ MonoBehaviour:
     type: 2}
   firePoint:
   - {fileID: 4853614228851290}
+--- !u!114 &114194515772004830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550376347854120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5418ba4f5e2c5914c8ca3beaaa26ab72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHp: 10
+  deathParticle: {fileID: 1662717246400792, guid: f5a868c914b18094ab4c149d98c60da7,
+    type: 2}
 --- !u!114 &114281874189203408
 MonoBehaviour:
   m_ObjectHideFlags: 1

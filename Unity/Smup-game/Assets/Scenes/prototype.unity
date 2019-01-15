@@ -539,6 +539,10 @@ Prefab:
       propertyPath: startDelay.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1376266372373104, guid: 6ec0f0f98d545fa4e9588953750f670e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec0f0f98d545fa4e9588953750f670e, type: 2}
   m_IsPrefabAsset: 0
@@ -1008,6 +1012,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000007
       objectReference: {fileID: 0}
+    - target: {fileID: 114412060908519960, guid: 56a5debda4f79f743b5f47efe282ca00,
+        type: 2}
+      propertyPath: setCooldown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a5debda4f79f743b5f47efe282ca00, type: 2}
   m_IsPrefabAsset: 0
@@ -1133,6 +1142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951407559}
   - component: {fileID: 1951407558}
+  - component: {fileID: 1951407560}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1153,52 +1163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  Waves:
-  - Type: 0
-    enemyFormation: {fileID: 1896061869978110, guid: 1b83f1b758b333b4b9e113ed7d90dd3f,
-      type: 2}
-    formationEnemyCount: 1
-    spawnValueYPos: 2.3
-    spawnWaitTime: 20
-  - Type: 0
-    enemyFormation: {fileID: 1138449540541810, guid: 59efb5892b3f27c4eb7d231b34332eb3,
-      type: 2}
-    formationEnemyCount: 5
-    spawnValueYPos: 8.6
-    spawnWaitTime: 20
-  - Type: 1
-    enemyFormation: {fileID: 1584411366503960, guid: ff8293736dd793c4f94eb0be69072587,
-      type: 2}
-    formationEnemyCount: 1
-    spawnValueYPos: 0
-    spawnWaitTime: 20
-  - Type: 0
-    enemyFormation: {fileID: 1333960280392612, guid: 1940632e4006e4d438fc4ba7f7ee0486,
-      type: 2}
-    formationEnemyCount: 4
-    spawnValueYPos: -14
-    spawnWaitTime: 20
-  - Type: 0
-    enemyFormation: {fileID: 1318994376116210, guid: 44a2dabbd99c0f14baadc61a8e96a5e2,
-      type: 2}
-    formationEnemyCount: 5
-    spawnValueYPos: -14
-    spawnWaitTime: 20
-  - Type: 0
-    enemyFormation: {fileID: 1525920438663460, guid: 7b097ef6f3168ca4cbf82c90e2b22360,
-      type: 2}
-    formationEnemyCount: 10
-    spawnValueYPos: -14
-    spawnWaitTime: 20
-  - Type: 0
-    enemyFormation: {fileID: 1876801480845260, guid: 9a2f3c41a50142a43921d2cb766d4ef6,
-      type: 2}
-    formationEnemyCount: 10
-    spawnValueYPos: 2.3
-    spawnWaitTime: 20
-  spawnValues: {x: 0, y: 20, z: 0}
-  startWaitTime: 1
-  waveWaitTime: 2
 --- !u!4 &1951407559
 Transform:
   m_ObjectHideFlags: 0
@@ -1212,6 +1176,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951407560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1951407557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1e98ad44388e747ad298ee6cada740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waves:
+  - Type: 0
+    enemyFormation: {fileID: 1705080094189710, guid: 5fa447406f600dc46be2055cc6be8681,
+      type: 2}
+    formationEnemyCount: 5
+    spawnValueYPos: 0
+    spawnWaitTime: 20
+  - Type: 1
+    enemyFormation: {fileID: 1584411366503960, guid: 9a39e8b4913582246acacbf2acf196f9,
+      type: 2}
+    formationEnemyCount: 1
+    spawnValueYPos: 0
+    spawnWaitTime: 0
+  spawnValues: {x: 0, y: 0, z: 0}
+  startWaitTime: 4.04
+  waveWaitTime: 0
 --- !u!1 &2048113336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1288,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 6.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114811846088171130, guid: efe59062c5c31a445ab44b1ec13f9f29,
+        type: 2}
+      propertyPath: setCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe59062c5c31a445ab44b1ec13f9f29, type: 2}

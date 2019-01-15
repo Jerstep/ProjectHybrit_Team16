@@ -277,6 +277,8 @@ MonoBehaviour:
   speed: 10
   heavySpeed: 10
   normalSpeed: 20
+  hitParticle: {fileID: 1153726701909880, guid: ee07b7a6292b3704db8d4b4a9deeb0c7,
+    type: 2}
   heavy: 1
   p1Owner: 0
   enemyOwner: 1
