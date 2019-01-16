@@ -28,9 +28,9 @@ MonoBehaviour:
     distortionRenderingLayer: 31
     eyewearType: 0
     stereoFramework: 0
-    seeThroughConfiguration: 0
-    viewerName: 
-    viewerManufacturer: 
+    seeThroughConfiguration: 1
+    viewerName: VR ONE
+    viewerManufacturer: Zeiss
     useCustomViewer: 0
     customViewer:
       Version: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
     videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
       type: 3}
     matteShader: {fileID: 0}
-    videoBackgroundEnabled: 0
+    videoBackgroundEnabled: 1
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0

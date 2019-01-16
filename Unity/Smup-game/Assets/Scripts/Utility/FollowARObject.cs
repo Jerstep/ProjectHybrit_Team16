@@ -27,7 +27,7 @@ public class FollowARObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        xOffset = Remap(ARTarget.position.x + xPosOffset, 0f, 41f, 0, xPos);
+        xOffset = Remap(ARTarget.position.x + xPosOffset, -41f, 41f, -xPos, xPos);
         yOffset = Remap(ARTarget.position.y + yPosOffset, -23f, 23f, -yPos, yPos);
 
         if(ARTarget != null)

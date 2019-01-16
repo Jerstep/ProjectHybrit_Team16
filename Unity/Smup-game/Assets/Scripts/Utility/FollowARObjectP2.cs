@@ -27,14 +27,14 @@ public class FollowARObjectP2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        xOffset = Remap(ARTarget.position.x + xPosOffset, 0f, -41f, 0, -xPos);
-        yOffset = Remap(ARTarget.position.y + yPosOffset, -23f, 23f, -yPos, yPos);
+        xOffset = Remap(ARTarget.position.x + xPosOffset, 41f, -41f, xPos, -xPos);
+        yOffset = Remap(ARTarget.position.y + yPosOffset, 23f, -23f, yPos, -yPos);
 
         if(ARTarget != null)
         {
             transform.position = new Vector3(xOffset, yOffset, this.transform.position.z);
-            //transform.eulerAngles = new Vector3(-ARTarget.rotation.x, -ARTarget.rotation.y, ARTarget.rotation.z);
-            transform.rotation = transform.rotation;
+            //transform.forward = new Vector3(ARTarget.transform.forward.x, ARTarget.transform.forward.y, transform.forward.z);
+            //transform.rotation = transform.rotation;
         }
         else
         {
