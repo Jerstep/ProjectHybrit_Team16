@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1873471883538096
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +276,7 @@ MonoBehaviour:
   speed: 10
   heavySpeed: 10
   normalSpeed: 15
+  hitParticle: {fileID: 0}
   heavy: 0
   p1Owner: 0
   enemyOwner: 0
@@ -9454,7 +9455,7 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 4300000, guid: eac5716b2487069409a578ebc88bf2f3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 1f5e88eebd34e0542a90faed6bacaa18, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

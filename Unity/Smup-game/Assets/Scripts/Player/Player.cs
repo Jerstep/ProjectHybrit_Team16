@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //OnBulletHit.SendHit += TakeDamage;
+        cooldown = setCooldown;
     }
 
     // Use this for initialization

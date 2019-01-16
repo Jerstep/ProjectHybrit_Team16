@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>4</LangVersion>
@@ -113,12 +113,11 @@
     <Compile Include="Assets\Scripts\Enemys\Rotate.cs" />
     <Compile Include="Assets\Scripts\Enemys\Shoot.cs" />
     <Compile Include="Assets\Scripts\Events\OnBulletHit.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\MobWave.cs" />
     <Compile Include="Assets\Scripts\ParticleRemover.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\PowerUps\AddSpecialBullet.cs" />
+    <Compile Include="Assets\Scripts\PowerUps\IncreseFireRate.cs" />
     <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\ProjectileMove.cs" />
     <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\ProjectileSpawn.cs" />
     <Compile Include="Assets\Scripts\Projectile (ZjackyTest)\RotateToMouse.cs" />
@@ -133,11 +132,15 @@
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Utility\CircleFormation.cs" />
     <Compile Include="Assets\Scripts\Utility\Destroy.cs" />
+    <Compile Include="Assets\Scripts\Utility\EffectBoxBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Utility\ExpandingCollider.cs" />
     <Compile Include="Assets\Scripts\Utility\FollowARObject.cs" />
     <Compile Include="Assets\Scripts\Utility\FollowARObjectP2.cs" />
     <Compile Include="Assets\Scripts\Utility\GameController.cs" />
     <Compile Include="Assets\Scripts\Utility\moveCircle.cs" />
     <Compile Include="Assets\Scripts\Utility\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\Utility\ScrolingTile.cs" />
+    <Compile Include="Assets\Scripts\Utility\SLerper.cs" />
     <Compile Include="Assets\Scripts\Utility\VirtualButtonPressed.cs" />
     <Compile Include="Assets\Scripts\Utility\VirtualButtonPressedP2.cs" />
     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />

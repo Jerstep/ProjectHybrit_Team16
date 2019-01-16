@@ -136,10 +136,13 @@ ModelImporter:
     2100000: lambert1
     2300000: pCylinder33
     2300002: pCylinder5
+    2300004: //RootNode
     3300000: pCylinder33
     3300002: pCylinder5
+    3300004: //RootNode
     4300000: pCylinder5
     4300002: pCylinder33
+    4300004: big_moma
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
