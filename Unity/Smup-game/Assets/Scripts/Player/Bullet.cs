@@ -58,6 +58,7 @@ public class Bullet : MonoBehaviour {
             Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
+
         if (other.tag == "Player-2")
         {
             if (uiManager.scoreP2 >= uiManager.scoreP1)

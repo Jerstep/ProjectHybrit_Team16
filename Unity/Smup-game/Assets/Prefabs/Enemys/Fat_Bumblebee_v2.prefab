@@ -1054,7 +1054,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1765879587661558}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.005814, y: 0.6545211, z: -39.702988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 224442498551138268}
@@ -1377,6 +1377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 50
   deathParticle: {fileID: 1662717246400792, guid: f5a868c914b18094ab4c149d98c60da7,
+    type: 2}
+  explotionCollider: {fileID: 1334693898099636, guid: 11d44a1265097c54ba5259dadf5dd75f,
     type: 2}
 --- !u!114 &114438390978294652
 MonoBehaviour:

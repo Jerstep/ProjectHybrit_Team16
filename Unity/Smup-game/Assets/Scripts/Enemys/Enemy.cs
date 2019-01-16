@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 
     public float enemyHp;
     public GameObject deathParticle;
+    public GameObject explotionCollider;
 
     // Use this for initialization
     void Start()
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour {
     void Kill()
     {
         Instantiate(deathParticle, gameObject.transform.position, gameObject.transform.rotation);
+        Instantiate(explotionCollider, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
