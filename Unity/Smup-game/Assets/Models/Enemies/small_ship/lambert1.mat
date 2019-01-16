@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: lambert1
   m_Shader: {fileID: 4800000, guid: 549a6e8687df34b4eb0a63f6356efcd0, type: 3}
-  m_ShaderKeywords: _BLEND_OFF _EMISSION _FAKE_LIGHTING _LIT _OVERLAY_OFF _RIMGLOW_OFF
-    _SCROLLING_EMISSION
+  m_ShaderKeywords: _BLEND_OFF _BLINKING_EMISSION _EMISSION _FAKE_LIGHTING _LIT _OVERLAY_OFF
+    _RIMGLOW_OFF _SCROLLING_EMISSION
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 105c0ecc41615384c985918aea899678, type: 3}
+        m_Texture: {fileID: 2800000, guid: bbf6449942f9aca4ab7bab2a9c0f49c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GreenTexture:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 067e1eaf7a9a5a24babe7c098598f29d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7e3a561310f18bd4bb1424dbdd30e178, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -115,7 +115,7 @@ Material:
     - _AUTO_BLEND: 0
     - _AutoBlendDelay: 2
     - _AutoBlendSpeed: 2
-    - _BLINKING_EMISSION: 0
+    - _BLINKING_EMISSION: 1
     - _Blend: 0
     - _BlendAlpha: 0
     - _BlendTiling: 1
@@ -169,8 +169,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BlendTextureColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.020421855, g: 1, b: 0.015686274, a: 1}
-    - _EmissionColor: {r: 0.076189555, g: 1, b: 0.07058823, a: 1}
+    - _Color: {r: 1, g: 0.5834376, b: 0.015686274, a: 1}
+    - _EmissionColor: {r: 1, g: 0.58431375, b: 0.015686275, a: 1}
     - _EmissiveScroll_Direction: {r: 0, g: -10, b: 0, a: 0}
     - _LightDirection: {r: 0, g: 1, b: 0, a: 0}
     - _LineColor: {r: 1, g: 1, b: 1, a: 1}
