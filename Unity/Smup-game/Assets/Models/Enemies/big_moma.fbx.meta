@@ -144,7 +144,12 @@ ModelImporter:
     4300002: pCylinder33
     4300004: big_moma
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: fe5ba1f739ebab44488a306ac65cf3ef, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
