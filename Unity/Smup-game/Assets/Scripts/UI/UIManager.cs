@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour {
     private string player1Wins = "P1Wins";
     private string player2Wins = "P2Wins";
     private string draw = "Draw";
-    private float time = 5;
+    private float time = 300;
 
     public Text timeTextRight, timeTextLeft;
     public Text scoreTextP1, scoreTextP2, hpTextP1, hpTextP2;

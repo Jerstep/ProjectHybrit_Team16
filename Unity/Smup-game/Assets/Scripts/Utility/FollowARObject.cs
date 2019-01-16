@@ -33,7 +33,7 @@ public class FollowARObject : MonoBehaviour {
         if(ARTarget != null)
         {
             transform.position = new Vector3(xOffset, yOffset, this.transform.position.z);
-            transform.rotation = ARTarget.transform.rotation;  /*ARTarget.transform.rotation;*/
+            //transform.rotation = ARTarget.transform.rotation;  /*ARTarget.transform.rotation;*/
         }
         else
         {

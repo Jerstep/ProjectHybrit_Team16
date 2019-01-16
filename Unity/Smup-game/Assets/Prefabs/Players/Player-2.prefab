@@ -231,7 +231,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.4, y: 5.47, z: 3.7}
+  m_Size: {x: 6.4, y: 3.41, z: 3.7}
   m_Center: {x: 0.4, y: 0.85, z: -0.55}
 --- !u!95 &95230720866012044
 Animator:
@@ -473,6 +473,7 @@ MonoBehaviour:
   playerHealth: 100
   imActive: 0
   player1: 0
+  canShoot: 0
   fire: 0
   setCooldown: 0.2
 --- !u!114 &114682388111447750
@@ -487,9 +488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ARTarget: {fileID: 0}
-  xOffset: 14.146769
-  yOffset: -14.652585
-  xPosOffset: -1
+  xOffset: 18.900625
+  yOffset: -2.8628714
+  xPosOffset: 0.3
   yPosOffset: -0.27
-  xPos: 294.69
+  xPos: 292.26
   yPos: 227.53
