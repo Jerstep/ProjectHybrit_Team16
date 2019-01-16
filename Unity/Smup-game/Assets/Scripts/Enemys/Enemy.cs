@@ -32,9 +32,9 @@ public class Enemy : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "WallDeath" || other.tag == "Hazard")
+        if (other.tag == "WallDeath" || other.tag == "Hazard" || other.tag == "Boss")
         {
-            Destroy(gameObject);
+            Kill();
         }
     }
 }
