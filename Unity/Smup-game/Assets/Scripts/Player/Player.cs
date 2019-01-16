@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public int playerHealth;
     public bool imActive;
     public bool player1;
+    public bool canShoot;
 
     [HideInInspector] public bool fire;
     private float cooldown = 0;
@@ -37,7 +38,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        if(canShoot)
+        {
+            Shoot();
+        }
+        
 
         //left right
         if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)

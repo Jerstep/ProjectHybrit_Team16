@@ -10,28 +10,48 @@ public class WaveController : MonoBehaviour {
     private int waveNumber = 1;
     public float startWaitTime;
     public float waveWaitTime;
+    public bool canSpawn, breakLoop;
 
     // Use this for initialization
-    void Start()
+    void Update()
     {
-        StartCoroutine(SpawnWaves());
+        if(canSpawn)
+        {
+            StartCoroutine(SpawnWaves());
+        }      
     }
 
     // In connection with WaveControllerEditor, Spawns waves that are made there.
     IEnumerator SpawnWaves()
     {
+        canSpawn = false;
         yield return new WaitForSeconds(startWaitTime);
         foreach(MobWave wave in Waves)
         {
-            spawnValues.y = wave.spawnValueYPos;                                                            // Sets Y Axis offset to given value from WaveControllerEditor  
-            Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, spawnValues.z);
-            Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
-            if(wave.Type == MobWave.WaveType.Enemy)
+            if(breakLoop)
             {
-                wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
+                break;
             }
-            Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
-            yield return new WaitForSeconds(wave.spawnWaitTime);
+            else
+            {
+                spawnValues.y = wave.spawnValueYPos;                                                            // Sets Y Axis offset to given value from WaveControllerEditor  
+                Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, spawnValues.z);
+                Quaternion SpawnRotation = wave.enemyFormation.transform.rotation;
+                if (wave.Type == MobWave.WaveType.Enemy)
+                {
+                    wave.enemyFormation.GetComponent<ShapeRay>().enemyAmount = wave.formationEnemyCount;
+                }
+                Instantiate(wave.enemyFormation, spawnPosition, SpawnRotation);
+                yield return new WaitForSeconds(wave.spawnWaitTime);
+            }
         }
+
+        /*for (var i = 0; i < enemysToDestroy.Length; i++)
+        {
+            Destroy(enemysToDestroy[i]);
+        }
+        
+        foreach(MobWave wave in Waves)
+         */
     }
 }
