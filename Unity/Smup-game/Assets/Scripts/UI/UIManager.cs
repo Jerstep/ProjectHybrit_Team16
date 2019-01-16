@@ -31,6 +31,11 @@ public class UIManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown("space"))
+        {
+            StartGame();
+        }
         string timemin = ((int)time / 60).ToString();
 
         string timeSeconds = ((int)time % 60).ToString();
@@ -74,7 +79,7 @@ public class UIManager : MonoBehaviour {
 
     public void StartGame()
     {
-        time = 5;
+        time = 300;
         scoreP1 = 0;
         scoreP2 = 0;
         player1.playerHealth = 100;
