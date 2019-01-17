@@ -7,6 +7,14 @@ public class IncreseFireRate : MonoBehaviour {
     public GameObject pickupEffect;
     public float fireRateMod = 1.4f;
     public float duration = 3f;
+       
+    public float powerUpMoveSpeed = 10;
+    public bool killer;
+
+    private void Start()
+    {
+        killer = Random.value > 0.5f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +22,20 @@ public class IncreseFireRate : MonoBehaviour {
         {
            StartCoroutine(ReduceFireRate(other) );
         }
+    }
+
+    private void Update()
+    {    
+
+        if(killer)
+        {
+            GetComponent<Rigidbody>().velocity = transform.forward * powerUpMoveSpeed;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().velocity = transform.forward * -powerUpMoveSpeed;
+        }
+       
     }
 
     IEnumerator ReduceFireRate(Collider player)

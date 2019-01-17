@@ -249,3 +249,9 @@ MonoBehaviour:
     type: 2}
   explotionCollider: {fileID: 1334693898099636, guid: 11d44a1265097c54ba5259dadf5dd75f,
     type: 2}
+  powerupPrefab: {fileID: 1969449457858524, guid: 159730c8e5f48b940826984bef36d245,
+    type: 2}
+  dropChanceMin: 0
+  dropChanceMax: 1
+  dropInt: 1
+  powerUpMoveSpeed: 10

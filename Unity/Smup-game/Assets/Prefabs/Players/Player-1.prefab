@@ -101,8 +101,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624554300804432}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -17.403881, y: 11.741024, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -13, y: 7, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4587069232341622}
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624554300804432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79caf0846471dd24f9187f1d2be37482, type: 3}
   m_Name: 
@@ -492,5 +492,9 @@ MonoBehaviour:
   imActive: 1
   player1: 1
   canShoot: 0
+  specialShotParticle: {fileID: 0}
+  specialBullet: {fileID: 1239621016972790, guid: 31defe29e9938ff439f362a6dfcdfad6,
+    type: 2}
+  waitTime: 0
   fire: 0
   setCooldown: 0.2

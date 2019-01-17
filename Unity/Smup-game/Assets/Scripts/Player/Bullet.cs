@@ -82,6 +82,15 @@ public class Bullet : MonoBehaviour {
 
             other.GetComponentInParent<Enemy>().enemyHp -= 10;
 
+            //if(other.GetComponentInParent<Enemy>().enemyHp <= 10 || other.CompareTag("Enemy"))
+            //{
+            //    if(p1Owner)
+            //    {
+            //        other.GetComponentInParent<Enemy>().DropPowerup(p1Owner);
+            //        Debug.Log("Dropped");
+            //    }
+            //}
+
             if (!heavy)
             {
                 Instantiate(hitParticle, gameObject.transform.position, gameObject.transform.rotation);
@@ -104,7 +113,7 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (other.tag == "Walls" || other.tag == "WallDeath" /*|| other.tag == "Bullet"*/)
+        if (other.CompareTag("Walls") || other.CompareTag("WallDeath") || other.CompareTag("SpecialBullet"))
         {
             Destroy(gameObject);
         }

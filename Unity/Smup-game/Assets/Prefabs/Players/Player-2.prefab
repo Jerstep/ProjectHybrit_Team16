@@ -474,6 +474,10 @@ MonoBehaviour:
   imActive: 0
   player1: 0
   canShoot: 0
+  specialShotParticle: {fileID: 0}
+  specialBullet: {fileID: 1239621016972790, guid: 31defe29e9938ff439f362a6dfcdfad6,
+    type: 2}
+  waitTime: 0
   fire: 0
   setCooldown: 0.2
 --- !u!114 &114682388111447750

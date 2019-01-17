@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     public bool player1;
     public bool canShoot;
 
+    public GameObject specialShotParticle;
+    public GameObject specialBullet;
+    private bool canSpecialShoot;
+    public float waitTime;
+
+
     [HideInInspector] public bool fire;
     private float cooldown = 0;
 
@@ -41,6 +47,11 @@ public class Player : MonoBehaviour
         if(canShoot)
         {
             Shoot();
+        }
+
+        if(canSpecialShoot)
+        {
+            SpecialShoot();
         }
         
 
@@ -74,14 +85,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Event for when player gets hit by an bullet thats not his own.
-    // Gameobject is the object this script is on, damage is send by the bullet.
-    // Retracts health from player.
-    //private void TakeDamage(GameObject player, int hitDamage)
-    //{
-    //    playerHealth -= hitDamage;
-    //}
-
     void Shoot()
     {
         cooldown -= Time.deltaTime;
@@ -92,9 +95,20 @@ public class Player : MonoBehaviour
         }        
     }
 
+    IEnumerator SpecialShoot()
+    {
+        GameObject tempParticleHolder = specialShotParticle;
+        Instantiate(tempParticleHolder, firePoint.position, firePoint.rotation);
+        tempParticleHolder.transform.parent = firePoint.transform;
+
+        yield return new WaitForSeconds(waitTime);
+        GameObject specialB = specialBullet;
+        Instantiate(specialB, firePoint.position, firePoint.rotation);
+
+    }
+
     void PlayerDeath()
     {
-        //OnBulletHit.SendHit -= TakeDamage;
         if(player1)
         {
             uiMan.scoreP1 -= 100;
