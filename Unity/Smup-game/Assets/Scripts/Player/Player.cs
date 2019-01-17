@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     public GameObject specialShotParticle;
     public GameObject specialBullet;
-    private bool canSpecialShoot;
+    public bool canSpecialShoot;
     public float waitTime;
 
 
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         if(canSpecialShoot)
         {
-            SpecialShoot();
+            StartCoroutine(SpecialShoot());
         }
         
 
@@ -97,13 +97,16 @@ public class Player : MonoBehaviour
 
     IEnumerator SpecialShoot()
     {
-        GameObject tempParticleHolder = specialShotParticle;
-        Instantiate(tempParticleHolder, firePoint.position, firePoint.rotation);
-        tempParticleHolder.transform.parent = firePoint.transform;
+        
+        GameObject tempParticleHolder = Instantiate(specialShotParticle, firePoint.position, specialShotParticle.transform.rotation);
+        tempParticleHolder.transform.parent = this.transform;
+        
+        canSpecialShoot = false;
 
         yield return new WaitForSeconds(waitTime);
-        GameObject specialB = specialBullet;
-        Instantiate(specialB, firePoint.position, firePoint.rotation);
+        Debug.Log("shooot");
+        Instantiate(specialBullet, firePoint.position, firePoint.rotation);
+        
 
     }
 

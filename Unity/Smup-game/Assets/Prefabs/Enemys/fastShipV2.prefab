@@ -252,6 +252,5 @@ MonoBehaviour:
   powerupPrefab: {fileID: 1969449457858524, guid: 159730c8e5f48b940826984bef36d245,
     type: 2}
   dropChanceMin: 0
-  dropChanceMax: 1
+  dropChanceMax: 20
   dropInt: 1
-  powerUpMoveSpeed: 10

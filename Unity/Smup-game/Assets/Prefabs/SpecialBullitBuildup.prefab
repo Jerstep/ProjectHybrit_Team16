@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4635300046834906}
+  - component: {fileID: 114687013712844072}
   m_Layer: 0
   m_Name: SpecialBullitBuildup
   m_TagString: Untagged
@@ -70,6 +71,18 @@ Transform:
   m_Father: {fileID: 4635300046834906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!114 &114687013712844072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104170673580578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1932c14789fab354083389a4e19e54c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTillDeath: 1.5
 --- !u!198 &198769494660199040
 ParticleSystem:
   m_ObjectHideFlags: 1

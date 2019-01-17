@@ -13,7 +13,7 @@ public class SpecialBullet : MonoBehaviour
     [Header("Particle on collision")]
     public GameObject hitParticle;
 
-    [HideInInspector] public bool p1Owner;
+    public bool p1Owner;
     // Use this for initialization
     void Start()
     {
@@ -26,18 +26,18 @@ public class SpecialBullet : MonoBehaviour
     {
         if(p1Owner)
         {
-            RigidBullet.velocity = transform.up * speed;
+            RigidBullet.velocity = transform.up * -speed;
         }
         else
         {
-            RigidBullet.velocity = transform.up * -speed;
+            RigidBullet.velocity = transform.up * speed;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if(other.tag == "Player-1")
+        if(other.tag == "Player-1" && !p1Owner)
         {
             if(uiManager.scoreP1 >= uiManager.scoreP2)
             {
@@ -47,7 +47,7 @@ public class SpecialBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.tag == "Player-2")
+        if(other.tag == "Player-2" && p1Owner)
         {
             if(uiManager.scoreP2 >= uiManager.scoreP1)
             {

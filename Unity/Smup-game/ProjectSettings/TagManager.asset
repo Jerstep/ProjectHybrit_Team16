@@ -16,6 +16,8 @@ TagManager:
   - Boss
   - FFX_Box
   - Explosion
+  - Undefined
+  - SpecialBullet
   layers:
   - Default
   - TransparentFX
