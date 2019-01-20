@@ -13,8 +13,6 @@ public class WaveData
 
     public MobWave.WaveType [] type;
 
-    public int [] enumTypes;
-
     public string[] waveTypes;
 
     public int [] formationEnemyCount;
@@ -37,7 +35,6 @@ public class WaveData
         for(int i = 0; i < waveSize; i++)
         {
             type[i] = controller.Waves[i].Type;
-            //waveTypes[i] = Application.dataPath.Replace("Assets","")  + AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
             waveTypes[i] = AssetDatabase.GetAssetPath(controller.Waves[i].enemyFormation).ToString();
             Debug.Log("Save Path: " + waveTypes[i]);
             formationEnemyCount[i] = controller.Waves[i].formationEnemyCount;
@@ -45,6 +42,4 @@ public class WaveData
             spawnWaitTime[i] = controller.Waves[i].spawnWaitTime;
         }
     }
-
-    // global unique identefier guid. opvragen van de asset database
 }

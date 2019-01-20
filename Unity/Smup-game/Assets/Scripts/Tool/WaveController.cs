@@ -45,13 +45,5 @@ public class WaveController : MonoBehaviour {
                 yield return new WaitForSeconds(wave.spawnWaitTime);
             }
         }
-
-        /*for (var i = 0; i < enemysToDestroy.Length; i++)
-        {
-            Destroy(enemysToDestroy[i]);
-        }
-        
-        foreach(MobWave wave in Waves)
-         */
     }
 }

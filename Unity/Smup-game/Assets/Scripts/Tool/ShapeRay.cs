@@ -72,10 +72,10 @@ public class ShapeRay : MonoBehaviour {
                 Debug.Log("Did not Hit");
             }
         }
-        InstantiateEnemys();        
+        InstantiateEnemies();        
     }
 
-    void InstantiateEnemys()
+    void InstantiateEnemies()
     {
         for (int i = 0; i < hitPoints.Count; i++)
         {
